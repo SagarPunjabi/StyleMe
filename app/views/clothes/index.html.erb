@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Clothes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Quadrant</th>
+      <th>Clothing category</th>
+      <th>Color</th>
+      <th>Occasion</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clothes.each do |clothe| %>
+      <tr>
+        <td><%= clothe.user_id %></td>
+        <td><%= clothe.quadrant %></td>
+        <td><%= clothe.clothing_category %></td>
+        <td><%= clothe.color %></td>
+        <td><%= clothe.occasion %></td>
+        <td><%= image_tag(clothe.photo, width: 200) if clothe.photo.attached? %></td>
+        <td><%= link_to 'Show', clothe %></td>
+        <td><%= link_to 'Edit', edit_clothe_path(clothe) %></td>
+        <td><%= link_to 'Destroy', clothe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Clothe', new_clothe_path %>
