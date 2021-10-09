@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @clothe.user_id %>
+</p>
+
+<p>
+  <strong>Quadrant:</strong>
+  <%= @clothe.quadrant %>
+</p>
+
+<p>
+  <strong>Clothing category:</strong>
+  <%= @clothe.clothing_category %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @clothe.color %>
+</p>
+
+<p>
+  <strong>Occasion:</strong>
+  <%= @clothe.occasion %>
+</p>
+<%= image_tag(@clothe.photo, width: 200) if @clothe.photo.attached? %>
+<%= link_to 'Edit', edit_clothe_path(@clothe) %> |
+<%= link_to 'Back', clothes_path %>
