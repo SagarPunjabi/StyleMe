@@ -8,49 +8,18 @@
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-
-                <form class="mx-1 mx-md-4">
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                            <input type="text" id="firstName" class="form-control form-control-lg" />
-                            <label class="form-label" for="firstName">First Name</label>
-                        </div>
-
-                        </div>
-                        <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                            <input type="text" id="lastName" class="form-control form-control-lg" />
-                            <label class="form-label" for="lastName">Last Name</label>
-                        </div>
-                    </div>
-                </div>
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="email" class="form-control" />
-                      <label class="form-label" for="email">Your Email</label>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="password" class="form-control" />
-                      <label class="form-label" for="password">Password</label>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="confirmpassword" class="form-control" />
-                      <label class="form-label" for="confirmpassword">Confirm password</label>
-                    </div>
-                  </div>
-
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" class="btn btn-primary btn-lg">Register</button>
-                  </div>
-
-                </form>
+                <%= form_with(model: @user, local: true) do |f| %>
+                  <%= f.label :name %>
+                  <%= f.text_field :name, class: 'form-control' %>
+                  <%= f.label :email %>
+                  <%= f.email_field :email, class: 'form-control' %>
+                  <%= f.label :password %>
+                  <%= f.password_field :password, class: 'form-control' %>
+                  <%= f.label :password_confirmation, "Confirmation" %>
+                  <%= f.password_field :password_confirmation, class: 'form-control' %>
+                  <%= f.submit "Register", class: "btn btn-primary" %>
+                <% end %>
+                
               </div>        
             </div>
           </div>
