@@ -33,11 +33,6 @@ local:
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
 amazon_dev:
-  # service: S3
-  # access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
-  # secret_access_key: <%= Rails.application.credentials.aws[:secret_access_key] %>
-  # region: <%= Rails.application.credentials.aws[:region] %>
-  # bucket: <%= Rails.application.credentials.aws[:dev][:bucket] %>
   service: S3
   access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
   secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
@@ -50,8 +45,3 @@ amazon_prod:
   secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
   region: us-east-2
   bucket: <%= ENV['AWS_BUCKET'] %>
-  # service: S3
-  # access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
-  # secret_access_key: <%= Rails.application.credentials.aws[:secret_access_key] %>
-  # region: <%= Rails.application.credentials.aws[:region] %>
-  # bucket: <%= Rails.application.credentials.aws[:prod][:bucket] %>
