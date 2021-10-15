@@ -1,5 +1,21 @@
-<h1>New Clothe</h1>
+<h1>Upload your clothes here!</h1>
 
-<%= render 'form', clothe: @clothe %>
+
+<%= form_with(model: @clothe, local: true) do |f| %>
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id, class: 'form-control' %>
+    <%= f.label :type %>
+    <%= f.select :type, ["Top","Bottom","Socks","Shoes","Accessory"], class: 'form-control' %>
+    <%= f.label :style %>
+    <%= f.select :style, ["Jeans","T-Shirt"], class: 'form-control' %>
+    <%= f.label :color %>
+    <%= f.color_field :color, class: 'form-control' %>
+    <%= f.label :occassion %>
+    <%= f.select :occassion, ["Casual","Business-Casual"], class: 'form-control' %>
+    <%= f.label :picture%>
+    <%= f.file_field :picture%>
+    <%= f.submit "Register", class: "btn btn-primary" %>
+<% end %>
+
 
 <%= link_to 'Back', clothes_path %>
