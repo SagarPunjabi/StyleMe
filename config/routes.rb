@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'static_pages#login'
+  root 'application#login'
   get 'sessions/new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
