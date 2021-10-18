@@ -1,19 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
   <%= @user.name %>
 </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Quadrant</th>
+      <th>Clothing Category</th>
+      <th>Color</th>
+      <th>Occasion</th>
+      <th>Image</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+  <tbody>
+    <% @user.clothes.each do |specs| %>
+      <tr>
+        <td><%= specs.quadrant %></td>
+        <td><%= specs.clothing_category %></td>
+        <td><%= specs.color %></td>
+        <td><%= specs.occasion %></td>
+        <td><%= image_tag(specs.photo, width: 200) if specs.photo.attached? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Upload Clothes', uploadclothes_path(:user_id => @user.id)%>
