@@ -32,26 +32,33 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
-# service: S3
-# access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-# secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-# region: us-east-2
-# bucket: <%= ENV['AWS_BUCKET'] %>
-# service: S3
-# access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-# secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-# region: us-east-2
-# bucket: <%= ENV['AWS_BUCKET'] %>
+
+#if you want to work locally dev
+# amazon_dev:
+#   service: S3
+#   access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
+#   secret_access_key: <%= Rails.application.credentials.aws[:secret_access_key] %>
+#   region: <%= Rails.application.credentials.aws[:region] %>
+#   bucket: <%= Rails.application.credentials.aws[:dev][:bucket] %>
+
+#if you want to work locally prod
+# amazon_prod:
+#   service: S3
+#   access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
+#   secret_access_key: <%= Rails.application.credentials.aws[:secret_access_key] %>
+#   region: <%= Rails.application.credentials.aws[:region] %>
+#   bucket: <%= Rails.application.credentials.aws[:prod][:bucket] %>
+
 amazon_dev:
   service: S3
-  access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
-  secret_access_key: <%= Rails.application.credentials.aws[:secret_access_key] %>
-  region: <%= Rails.application.credentials.aws[:region] %>
-  bucket: <%= Rails.application.credentials.aws[:dev][:bucket] %>
+  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  region: us-east-2
+  bucket: <%= ENV['AWS_BUCKET'] %>
 
 amazon_prod:
   service: S3
-  access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
-  secret_access_key: <%= Rails.application.credentials.aws[:secret_access_key] %>
-  region: <%= Rails.application.credentials.aws[:region] %>
-  bucket: <%= Rails.application.credentials.aws[:prod][:bucket] %>
+  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  region: us-east-2
+  bucket: <%= ENV['AWS_BUCKET'] %>
