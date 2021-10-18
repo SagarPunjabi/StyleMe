@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   resources :clothes
   resources :users
   root 'application#welcome'
