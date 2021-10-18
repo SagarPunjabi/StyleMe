@@ -3,18 +3,18 @@
 
 <%= form_with(model: @clothe, local: true) do |f| %>
     <%= f.label :user_id %>
-    <%= f.number_field :user_id, class: 'form-control' %>
+    <%= f.number_field :user_id, class: 'upload-form' %>
     <%= f.label :type %>
-    <%= f.select :type, ["Top","Bottom","Socks","Shoes","Accessory"], class: 'form-control' %>
+    <%= f.select :type, ["Top","Bottom","Socks","Shoes","Accessory"],{}, class: 'form-select form-select-sm w-25' %>
     <%= f.label :style %>
-    <%= f.select :style, ["Jeans","T-Shirt"], class: 'form-control' %>
+    <%= f.select :style, ["Jeans","T-Shirt"], {}, class: 'form-select form-select-sm w-25' %>
     <%= f.label :color %>
-    <%= f.color_field :color, class: 'form-control' %>
+    <%= f.color_field :color, class: 'upload-form h-50' %>
     <%= f.label :occassion %>
-    <%= f.select :occassion, ["Casual","Business-Casual"], class: 'form-control' %>
+    <%= f.select :occassion, ["Casual","Business-Casual"],{}, class: 'form-select form-select-sm w-25' %>
     <%= f.label :picture%>
     <%= f.file_field :picture%>
-    <%= f.submit "Register", class: "btn btn-primary" %>
+    <%= f.submit "Register", class: "btn btn-primary w-25" %>
 <% end %>
 
 
