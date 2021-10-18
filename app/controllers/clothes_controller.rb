@@ -11,7 +11,7 @@ class ClothesController < ApplicationController
 
   # GET /clothes/new
   def new
-    @clothe = Clothe.new
+    @clothe = Clothe.new(user_id: params[:user_id])
   end
 
   # GET /clothes/1/edit
