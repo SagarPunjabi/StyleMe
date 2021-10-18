@@ -2,18 +2,17 @@
 
 
 <%= form_with(model: @clothe, local: true) do |f| %>
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id, class: 'upload-form' %>
-    <%= f.label :type %>
-    <%= f.select :type, ["Top","Bottom","Socks","Shoes","Accessory"],{}, class: 'form-select form-select-sm w-25' %>
-    <%= f.label :style %>
-    <%= f.select :style, ["Jeans","T-Shirt"], {}, class: 'form-select form-select-sm w-25' %>
+    <%= f.hidden_field :user_id %>
+    <%= f.label :quadrant %>
+    <%= f.select :quadrant, ["Top","Bottom","Socks","Shoes","Accessory"],{}, class: 'form-select form-select-sm w-25' %>
+    <%= f.label :clothing_category %>
+    <%= f.select :clothing_category, ["Jeans","T-Shirt"], {}, class: 'form-select form-select-sm w-25' %>
     <%= f.label :color %>
     <%= f.color_field :color, class: 'upload-form h-50' %>
-    <%= f.label :occassion %>
-    <%= f.select :occassion, ["Casual","Business-Casual"],{}, class: 'form-select form-select-sm w-25' %>
-    <%= f.label :picture%>
-    <%= f.file_field :picture%>
+    <%= f.label :occasion %>
+    <%= f.select :occasion, ["Casual","Business-Casual"],{}, class: 'form-select form-select-sm w-25' %>
+    <%= f.label :photo%>
+    <%= f.file_field :photo%>
     <%= f.submit "Register", class: "btn btn-primary w-25" %>
 <% end %>
 
