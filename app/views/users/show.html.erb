@@ -1,32 +1,38 @@
+<!DOCTYPE html>
+<html>
 <p id="notice"><%= notice %></p>
-
 <p>
   <%= @user.name %>
 </p>
+<h1>Tops</h1>
+<div class="myGallery">
+  <% @user.clothes.each do |specs| %>
+  <%if specs.quadrant=="Top"%>
+     <div class="item">
+      <%= image_tag(specs.photo, width: 200) if specs.photo.attached? %>
+      <span class="caption"> <%= specs.quadrant %>
+        <%= specs.clothing_category %>
+        <%= specs.color %>
+        <%= specs.occasion %></span>
+      </div>
+    <% end %>  
+  <% end %>
+</div>
+<h1>Bottoms</h1>
+<div class="myGallery">
+  <% @user.clothes.each do |specs| %>
+  <%if specs.quadrant=="Bottom"%>
+     <div class="item">
+      <%= image_tag(specs.photo, width: 200) if specs.photo.attached? %>
+      <span class="caption"> <%= specs.quadrant %>
+        <%= specs.clothing_category %>
+        <%= specs.color %>
+        <%= specs.occasion %></span>
+      </div>
+      <% end %>
+  <% end %>
+</div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Quadrant</th>
-      <th>Clothing Category</th>
-      <th>Color</th>
-      <th>Occasion</th>
-      <th>Image</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user.clothes.each do |specs| %>
-      <tr>
-        <td><%= specs.quadrant %></td>
-        <td><%= specs.clothing_category %></td>
-        <td><%= specs.color %></td>
-        <td><%= specs.occasion %></td>
-        <td><%= image_tag(specs.photo, width: 200) if specs.photo.attached? %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <%= link_to 'Upload Clothes', uploadclothes_path(:user_id => @user.id)%>
+</html>
