@@ -5,34 +5,9 @@
   <%= @user.name %>
 </p>
 <h1>Tops</h1>
-<div class="myGallery">
-  <% @user.clothes.each do |specs| %>
-  <%if specs.quadrant=="Top"%>
-     <div class="item">
-      <%= image_tag(specs.photo, width: 200) if specs.photo.attached? %>
-      <span class="caption"> <%= specs.quadrant %>
-        <%= specs.clothing_category %>
-        <%= specs.color %>
-        <%= specs.occasion %></span>
-      </div>
-    <% end %>  
-  <% end %>
-</div>
+<%= render 'my_partial', quad: "Top" %>
 <h1>Bottoms</h1>
-<div class="myGallery">
-  <% @user.clothes.each do |specs| %>
-  <%if specs.quadrant=="Bottom"%>
-     <div class="item">
-      <%= image_tag(specs.photo, width: 200) if specs.photo.attached? %>
-      <span class="caption"> <%= specs.quadrant %>
-        <%= specs.clothing_category %>
-        <%= specs.color %>
-        <%= specs.occasion %></span>
-      </div>
-      <% end %>
-  <% end %>
-</div>
-
+<%= render 'my_partial', quad: "Bottom" %>
 
 <%= link_to 'Upload Clothes', uploadclothes_path(:user_id => @user.id)%>
 </html>

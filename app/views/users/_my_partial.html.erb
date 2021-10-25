@@ -1,0 +1,15 @@
+<div class="myGallery">
+<% @user.clothes.each do |specs| %>
+  <%if specs.quadrant==quad%>
+     <div class="item">
+     <%= link_to edit_clothe_path(specs) do %>
+      <%= image_tag(specs.photo, width: 200) if specs.photo.attached? %>
+      <% end %>
+      <span class="caption"> <%= specs.quadrant %>
+        <%= specs.clothing_category %>
+        <%= specs.color %>
+        <%= specs.occasion %></span>
+      </div>
+  <% end %>  
+<% end %>
+</div>
