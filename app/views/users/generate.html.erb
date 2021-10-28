@@ -1,0 +1,9 @@
+<div class="outfit">
+    <h1> Your outfit for the day is: </h1>
+    <%= image_tag(@random_top.photo, width: 200) if @random_top.photo.attached? %>
+    <div>
+        <%= image_tag(@random_bottom.photo, width: 200) if @random_bottom.photo.attached? %>
+    </div>
+</div>
+
+<%= link_to 'Back', 'javascript:history.go(-1);' %>

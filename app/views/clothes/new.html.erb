@@ -1,20 +1,21 @@
-<h1>Upload your clothes here!</h1>
 
 
-<%= form_with(model: @clothe, local: true) do |f| %>
-    <%= f.hidden_field :user_id %>
-    <%= f.label :quadrant %>
-    <%= f.select :quadrant, ["Top","Bottom","Socks","Shoes","Accessory"],{}, class: 'form-select form-select-sm w-25' %>
-    <%= f.label :clothing_category %>
-    <%= f.select :clothing_category, ["Jeans","T-Shirt"], {}, class: 'form-select form-select-sm w-25' %>
-    <%= f.label :color %>
-    <%= f.color_field :color, class: 'upload-form h-50' %>
-    <%= f.label :occasion %>
-    <%= f.select :occasion, ["Casual","Business-Casual"],{}, class: 'form-select form-select-sm w-25' %>
-    <%= f.label :photo%>
-    <%= f.file_field :photo%>
-    <%= f.submit "Register", class: "btn btn-primary w-25" %>
-<% end %>
-
+<div class="container" style="margin: auto auto;">
+    <h1>Upload your clothes here!</h1>
+    <%= form_with(model: @clothe, local: true) do |f| %>
+        <%= f.hidden_field :user_id %>
+        <%= f.label :quadrant %>
+        <%= f.select :quadrant, ["Top","Bottom","Socks","Shoes","Accessory"],{}, class: 'form-select form-select-sm w-25' %>
+        <%= f.label :clothing_category %>
+        <%= f.select :clothing_category, ["Jeans","T-Shirt"], {}, class: 'form-select form-select-sm w-25' %>
+        <%= f.label :color %>
+        <%= f.color_field :color, class: 'upload-form h-50' %>
+        <%= f.label :occasion %>
+        <%= f.select :occasion, ["Casual","Business-Casual"],{}, class: 'form-select form-select-sm w-25' %>
+        <%= f.label :photo%>
+        <%= f.file_field :photo%>
+        <%= f.submit "Upload", class: "btn btn-primary w-25" %>
+    <% end %>
+</div>
 
 <%= link_to 'Back', 'javascript:history.go(-1);' %>
