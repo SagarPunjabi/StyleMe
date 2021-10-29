@@ -57,12 +57,15 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
+ 
+
   def generate
-    @random_top = Clothe.where(user_id: params[:user_id], quadrant:"Top").sample()
+    @random_top = Clothe.where(user_id: params[:user_id], quadrant: 'Top').sample
     # @random_top = @user_tops.sample()
-    @random_bottom = Clothe.where(user_id: params[:user_id], quadrant:"Bottom").sample()
+    @random_bottom = Clothe.where(user_id: params[:user_id], quadrant: 'Bottom').sample
   end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -74,5 +77,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :quadrant)
   end
-
 end

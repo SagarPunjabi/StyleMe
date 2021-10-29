@@ -1,6 +1,7 @@
 <h1>Editing Clothe</h1>
 
 <%= render 'form', clothe: @clothe %>
-
+<%= button_to 'Destroy', @clothe, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <%= link_to 'Back', 'javascript:history.go(-1);' %> 
+
