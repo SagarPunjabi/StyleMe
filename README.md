@@ -1,24 +1,75 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1> Style Me! </h1>
 
-Things you may want to cover:
 
-* Ruby version
+<h2> Functionality</h2>
 
-* System dependencies
+<p>
+Style Me! is an outfit planning application that recommends users new outfits everyday based on the weather. Users have the ability to sign up for the application. Once they are registered, users can upload pictures of their clothes. We use an image recognation API to make the uploading process easier. Once the user has uploaded their clothes, they can generate a randomized outfit. We use a weather API to generate appropriate outfits & accessories for the day. We also use a color matching algorithm to make sure the outfit is stylish! Once the user selects the outfit, the clothes get put into a dirty pile and won't get suggested until the user marks them as "clean".  </p>
 
-* Configuration
+<h2 style="color:green"> Implemented </h2>
+<ul>
+    <li> User Sign up </li>
+    <li> User Log in </li>
+    <li> Upload clothes </li>
+    <li> Generate clothes based on weather </li>
+</ul>
 
-* Database creation
+<h2 style ="color:yellow"> In progress </h2>
+<ul>
+    <li> Image recognition </li>
+    <li> Mark clothes as dirty/clean </li>
+    <li> Color matching algorithm  </li>
+</ul>
 
-* Database initialization
+<h2> Routes </h2>
+<p>
+<code> Root:</code>  
+<ul>
+    <li>/ - Landing pages for the website. Users can login from this page.</li>
+</ul>
 
-* How to run the test suite
+<code> Sign up:</code>  
+<ul>
+    <li>/signup - Displays the sign up form</li>
+</ul>
 
-* Services (job queues, cache servers, search engines, etc.)
+<code> Users:</code> 
+<ul>
+    <li>/users/user_id - This is the users profile page, displays their clothes.</li>
+    <li>/generate?user_id= - Generates a random outfit</li>
+</ul>
 
-* Deployment instructions
+<code> Clothes:</code>  
+<ul>
+    <li>/uploadclothes?user_id= - Displays the form where users can upload images of their clothes 
+    </li>
+    <li> /dirtyclothes?user_id= - Displays the list of dirty clothes (not yet implemented) </li>
+</ul>
 
-* ...
+</p>
+
+
+<h2> Schema </h2>
+<p> @Ryan 
+
+Include your db schema. (This doesn't have to be a diagram, just having it as a summary text is sufficient.)
+</p>
+
+<h2> APIs </h2>
+<ul>
+    <li><a href="https://imagga.com">Image Recognition  API</a> </li>
+    <li><a href="">Weather API</a> </li>
+</ul>
+
+<h2> Gems </h2>
+<ul>
+    <li> bcrypt </li>
+    <li> aws-sdk-s3 </li>
+    <li> base64 </li>
+    <li> json </li>
+    
+    
+</ul>
+
