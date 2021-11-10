@@ -1,8 +1,17 @@
+<h1>The current temperature is: </h1>
+<%= @output['current']['temp']%>
 <div class="outfit">
     <h1> Your outfit for the day is: </h1>
-    <%= image_tag(@random_top.photo, width: 200) if @random_top.photo.attached? %>
+    <%= image_tag(@random_top.photo, width: 200) if !@random_top.nil? && @random_top.photo.attached? %>
+   
+    <%= image_tag(@random_top2.photo, width: 200) if !@random_top2.nil? && @random_top2.photo.attached? %>
+   
     <div>
-        <%= image_tag(@random_bottom.photo, width: 200) if @random_bottom.photo.attached? %>
+        <%= image_tag(@random_bottom.photo, width: 200) if !@random_bottom.nil? && @random_bottom.photo.attached? %>
+    </div>
+    <div>
+        <%= image_tag(@random_socks.photo, width: 200) if !@random_socks.nil? && @random_socks.photo.attached? %>
+        <%= image_tag(@random_shoes.photo, width: 200) if !@random_shoes.nil? && @random_shoes.photo.attached? %>
     </div>
 </div>
 

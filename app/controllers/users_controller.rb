@@ -58,12 +58,44 @@ class UsersController < ApplicationController
     end
   end
 
- 
+  # 'http://api.openweathermap.org/data/2.5/weather?lat=42.376171&lon=-71.238991&units=imperial&APPID=d2745388745407cc73d2bd2a94c7e3bc'
 
   def generate
-    @random_top = Clothe.where(user_id: params[:user_id], quadrant: 'Top').sample
-    # @random_top = @user_tops.sample()
-    @random_bottom = Clothe.where(user_id: params[:user_id], quadrant: 'Bottom').sample
+    require 'net/http'
+    require 'json'
+    @url = 'https://api.openweathermap.org/data/2.5/onecall?lat=42.3749985&lon=-71.234332396&exclude=minutely,daily&units=imperial&APPID=d2745388745407cc73d2bd2a94c7e3bc'
+    @uri = URI(@url)
+    @response = Net::HTTP.get(@uri)
+    @output = JSON.parse(@response)
+    if @output['current']['temp'] >= 70
+      @random_top = Clothe.where(user_id: params[:user_id], quadrant: 'Top',
+                                 clothing_category: %w[T-Shirt Button-down Dress]).sample
+      # @random_top = @user_tops.sample()
+      @random_bottom = Clothe.where(user_id: params[:user_id], quadrant: 'Bottom',
+                                    clothing_category: %w[Shorts Skirt]).sample
+      @random_shoes = Clothe.where(user_id: params[:user_id], quadrant: 'Shoes',
+                                   clothing_category: %w[Sneakers Dress-Shoes Sandals]).sample
+    else
+      @random_top = Clothe.where(user_id: params[:user_id], quadrant: 'Top',
+                                 clothing_category: %w[Hoodie Longsleeve T-Shirt Button-down Dress]).sample
+      # @random_top = @user_tops.sample()
+      @random_bottom = Clothe.where(user_id: params[:user_id], quadrant: 'Bottom',
+                                    clothing_category: %w[Jeans Pants Leggings Sweatpants Skirt]).sample
+      @random_shoes = Clothe.where(user_id: params[:user_id], quadrant: 'Shoes',
+                                   clothing_category: %w[Sneakers Dress-Shoes]).sample
+      if @output['current']['temp'] >= 40 && @output['current']['temp'] <= 60
+        @random_top2 = Clothe.where(user_id: params[:user_id], quadrant: 'Top',
+                                    clothing_category: %w[Fall/Spring-Jacket]).sample
+      end
+      if @output['current']['temp'] < 40
+        @random_top2 = Clothe.where(user_id: params[:user_id], quadrant: 'Top',
+                                    clothing_category: %w[Winter-Coat]).sample
+        @random_shoes = Clothe.where(user_id: params[:user_id], quadrant: 'Shoes',
+                                     clothing_category: %w[Sneakers Dress-Shoes Boots]).sample
+      end
+    end
+    @random_socks = Clothe.where(user_id: params[:user_id], quadrant: 'Socks',
+                                 clothing_category: %w[Socks]).sample
   end
 
   private
