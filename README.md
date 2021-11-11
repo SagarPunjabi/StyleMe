@@ -2,7 +2,6 @@
 
 <h1> Style Me! </h1>
 
-
 <h2> Functionality</h2>
 
 <p>
@@ -30,18 +29,21 @@ Style Me! is an outfit planning application that recommends users new outfits ev
     <li>/ - Landing pages for the website. Users can login from this page.</li>
 </ul>
 
-<code> Sign up:</code>  
+<code> Sign up:</code>
+
 <ul>
     <li>/signup - Displays the sign up form</li>
 </ul>
 
-<code> Users:</code> 
+<code> Users:</code>
+
 <ul>
     <li>/users/user_id - This is the users profile page, displays their clothes.</li>
     <li>/generate?user_id= - Generates a random outfit</li>
 </ul>
 
-<code> Clothes:</code>  
+<code> Clothes:</code>
+
 <ul>
     <li>/uploadclothes?user_id= - Displays the form where users can upload images of their clothes 
     </li>
@@ -49,7 +51,6 @@ Style Me! is an outfit planning application that recommends users new outfits ev
 </ul>
 
 </p>
-
 
 <h2> Schema </h2>
 <p> 
@@ -61,12 +62,13 @@ Columns: integer id, string name, string email, string password_digest
 
 <strong> Name: Clothes </strong>
 
-Columns: integer id, integer user_id, string quadrant, string 
+Columns: integer id, integer user_id, string quadrant, string
 clothing_category, string color, string occasion
 
 <strong> Associations: </strong>
 
 Users -> Clothes (is One to Many)
+
 </p>
 
 <h2> APIs </h2>
@@ -84,4 +86,3 @@ Users -> Clothes (is One to Many)
     
     
 </ul>
-
