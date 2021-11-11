@@ -52,6 +52,8 @@ Style Me! is an outfit planning application that recommends users new outfits ev
 
 </p>
 
+<h2> Prototype </h2>
+
 <h2> Schema </h2>
 <p> 
 <h3>Tables: </h3>
