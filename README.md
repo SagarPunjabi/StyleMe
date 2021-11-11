@@ -62,13 +62,8 @@ Columns: integer id, string name, string email, string password_digest
 
 <strong> Name: Clothes </strong>
 
-<<<<<<< HEAD
-Columns: integer id, integer user_id, string quadrant, string
-clothing_category, string color, string occasion
-=======
-Columns: integer id, string quadrant, string 
+Columns: integer id, string quadrant, string
 clothing_category, string color, string occasion, integer foriegn_key(user_id)
->>>>>>> 04ee686a0ed22aaa8530cc91ca0e7905fa91610b
 
 <strong> Associations: </strong>
 
