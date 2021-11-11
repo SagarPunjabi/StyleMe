@@ -52,15 +52,27 @@ Style Me! is an outfit planning application that recommends users new outfits ev
 
 
 <h2> Schema </h2>
-<p> @Ryan 
+<p> 
+<h3>Tables: </h3>
 
-Include your db schema. (This doesn't have to be a diagram, just having it as a summary text is sufficient.)
+<strong>Name: Users </strong>
+
+Columns: integer id, string name, string email, string password_digest
+
+<strong> Name: Clothes </strong>
+
+Columns: integer id, integer user_id, string quadrant, string 
+clothing_category, string color, string occasion
+
+<strong> Associations: </strong>
+
+Users -> Clothes (is One to Many)
 </p>
 
 <h2> APIs </h2>
 <ul>
     <li><a href="https://imagga.com">Image Recognition  API</a> </li>
-    <li><a href="">Weather API</a> </li>
+    <li><a href="https://openweathermap.org/api">Weather API</a> </li>
 </ul>
 
 <h2> Gems </h2>
