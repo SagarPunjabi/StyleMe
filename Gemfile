@@ -58,3 +58,7 @@ gem 'aws-sdk-s3', require: false
 gem 'bcrypt',  '3.1.13'
 gem 'rails-controller-testing'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem 'rest-client'
+gem 'base64'
+gem 'json'

@@ -20,10 +20,14 @@ class ClothesController < ApplicationController
   # POST /clothes or /clothes.json
   def create
     @clothe = Clothe.new(clothe_params)
-
+    api = ImageTags.new(url_for(@clothe.photo))
+    quad, category, oc = api.get_tags() 
+    @clothe.quadrant = quad
+    @clothe.clothing_category = category
+    @clothe.occasion = oc
     respond_to do |format|
       if @clothe.save
-        format.html { redirect_to @clothe, notice: 'Clothe was successfully created.' }
+        format.html { redirect_to edit_clothe_path(@clothe), notice: 'Clothe was successfully created.' }
         format.json { render :show, status: :created, location: @clothe }
       else
         format.html { render :new, status: :unprocessable_entity }

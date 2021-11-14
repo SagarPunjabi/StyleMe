@@ -25,5 +25,6 @@
   <%= @clothe.occasion %>
 </p>
 <%= image_tag(@clothe.photo, width: 200) if @clothe.photo.attached? %>
+<%= url_for(@clothe.photo) if @clothe.photo.attached?%>
 <%= link_to 'Edit', edit_clothe_path(@clothe) %> |
 <%= link_to 'Back', 'javascript:history.go(-2);' %>
