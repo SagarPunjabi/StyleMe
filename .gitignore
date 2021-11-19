@@ -36,6 +36,7 @@ yarn-debug.log*
 .yarn-integrity
 
 config/database.yml
+/config/storage.yml
 
 /public/packs
 /public/packs-test
@@ -43,3 +44,5 @@ config/database.yml
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+.env

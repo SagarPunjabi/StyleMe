@@ -58,12 +58,19 @@ class UsersController < ApplicationController
     end
   end
 
-  # 'http://api.openweathermap.org/data/2.5/weather?lat=42.376171&lon=-71.238991&units=imperial&APPID=d2745388745407cc73d2bd2a94c7e3bc'
-
   def generate
+    ip_address = if Rails.env.production?
+                   request.remote_ip
+                 else
+                   Net::HTTP.get(URI.parse('http://checkip.amazonaws.com/')).squish
+                 end
+    location = Geocoder.search(ip_address)[0].data['loc']
+    lat = location.split(',').first
+    lon = location.split(',').last
+    key = ENV['API_KEY']
     require 'net/http'
     require 'json'
-    @url = 'https://api.openweathermap.org/data/2.5/onecall?lat=42.3749985&lon=-71.234332396&exclude=minutely,daily&units=imperial&APPID=d2745388745407cc73d2bd2a94c7e3bc'
+    @url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{lat}&lon=#{lon}&exclude=minutely,daily&units=imperial&APPID=#{key}"
     @uri = URI(@url)
     @response = Net::HTTP.get(@uri)
     @output = JSON.parse(@response)
