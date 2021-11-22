@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
+<header>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+<%= render "layouts/header" %>
 <p id="notice"><%= notice %></p>
-<h1>
-  <%= @user.name %>
+</header>
+<body>
+<h1 class="center">
+  <%= @user.name%>'s closet
 </h1>
-<h1>Tops</h1>
+<br>
+<div>
+<h2 class="text-with-line"><span>Tops</span></h2>
 <%= render 'my_partial', quad: "Top" %>
-<h1>Bottoms</h1>
+<h2 class="text-with-line"><span>Bottoms</span></h2>
 <%= render 'my_partial', quad: "Bottom" %>
-<h1>Socks</h1>
+<h2 class="text-with-line"><span>Socks</span></h2>
 <%= render 'my_partial', quad: "Socks" %>
-<h1>Shoes</h1>
+<h2 class="text-with-line"><span>Shoes</span></h2>
 <%= render 'my_partial', quad: "Shoes" %>
+</div>
 
 <%= link_to 'Upload Clothes', uploadclothes_path(:user_id => @user.id)%>
 <%= link_to 'Generate Outfit', generate_path(:user_id => @user.id)%>
-
+</body>
 </html>
