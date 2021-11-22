@@ -2,7 +2,6 @@
 class ImageTag
 
     def initialize(image_url)
-        puts "Creating new image tag"
         api_key = 'acc_6c3b78f522083d4'
         api_secret = '6568d9e3cbf1b8711671100c072c039f'
         auth = 'Basic ' + Base64.strict_encode64( "#{api_key}:#{api_secret}" ).chomp

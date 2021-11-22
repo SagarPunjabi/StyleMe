@@ -16,28 +16,27 @@
   </div>
 
   <div class="field">
-    <%= form.label :quadrant %>
-    <%= form.text_field :quadrant %>
+    <%= form.label :quadrant, "Category"  %>
+    <%= form.select :quadrant, ["Top","Bottom","Socks","Shoes","Accessory"],selected:@clothe.quadrant, class: 'form-select form-select-sm w-25', :required => true %>
   </div>
 
   <div class="field">
-    <%= form.label :clothing_category %>
-    <%= form.text_field :clothing_category %>
+    <%= form.label :clothing_category ,"Style" %>
+    <%= form.select :clothing_category, ["T-Shirt","Hoodie","Longsleeve","Button-down","Winter-Coat","Fall/Spring-Jacket","Dress","Jeans","Pants","Shorts","Skirt","Leggings","Sweatpants","Sneakers","Dress-Shoes","Sandals","Boots","Socks"], selected:@clothe.clothing_category, class: 'form-select form-select-sm w-25', :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :color %>
-    <%= form.text_field :color %>
+    <%= form.color_field :color,value:@clothe.color, class: 'upload-form h-50 w-50', :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :occasion %>
-    <%= form.text_field :occasion %>
+    <%= form.select :occasion, ["Casual","Business-Casual"],select:@clothe.occasion, class: 'form-select form-select-sm w-25', :required => true %>
   </div>
 <div class="field">
-<%= form.file_field :photo %>
-</div>
-  <div class="actions">
-    <%= form.submit %>
   </div>
+    <div class="actions">
+      <%= form.submit "Save" %>
+    </div>
 <% end %>

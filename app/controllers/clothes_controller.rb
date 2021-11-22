@@ -1,4 +1,5 @@
 require './app/services/imagetag.rb'
+require './app/services/clothingcolor.rb'
 class ClothesController < ApplicationController
   before_action :set_clothe, only: %i[show edit update destroy]
 
@@ -26,11 +27,17 @@ class ClothesController < ApplicationController
       if @clothe.save
         image_url = @clothe.photo.url
         image_url = image_url[0,image_url.index('?response')]
-        @api = ImageTag.new(image_url)
-        quad, category, oc = @api.get_tags() 
+
+        tags_api = ImageTag.new(image_url)
+        quad, category, oc = tags_api.get_tags() 
         @clothe.update(quadrant:quad) 
         @clothe.update(clothing_category: category)
         @clothe.update(occasion:oc)
+
+        color_api = ClothingColor.new(image_url)
+        color = color_api.get_clothing_color()
+        @clothe.update(color: color)
+
         format.html { redirect_to edit_clothe_path(@clothe), notice: 'Clothe was successfully created.' }
         format.json { render :show, status: :created, location: @clothe }
       else
