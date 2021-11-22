@@ -1,3 +1,4 @@
+require './app/services/imagetag.rb'
 class ClothesController < ApplicationController
   before_action :set_clothe, only: %i[show edit update destroy]
 
@@ -20,13 +21,16 @@ class ClothesController < ApplicationController
   # POST /clothes or /clothes.json
   def create
     @clothe = Clothe.new(clothe_params)
-    api = ImageTags.new(url_for(@clothe.photo))
-    quad, category, oc = api.get_tags() 
-    @clothe.quadrant = quad
-    @clothe.clothing_category = category
-    @clothe.occasion = oc
+
     respond_to do |format|
       if @clothe.save
+        image_url = @clothe.photo.url
+        image_url = image_url[0,image_url.index('?response')]
+        @api = ImageTag.new(image_url)
+        quad, category, oc = @api.get_tags() 
+        @clothe.update(quadrant:quad) 
+        @clothe.update(clothing_category: category)
+        @clothe.update(occasion:oc)
         format.html { redirect_to edit_clothe_path(@clothe), notice: 'Clothe was successfully created.' }
         format.json { render :show, status: :created, location: @clothe }
       else
