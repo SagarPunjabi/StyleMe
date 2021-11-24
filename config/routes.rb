@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get '/uploadclothes', to: 'clothes#new'
   get '/generate', to: 'users#generate'
   get '/generate_again', to: 'users#generate_again', as: :generate_again
+  get '/closet', to: 'sessions#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

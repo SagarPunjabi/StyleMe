@@ -15,7 +15,10 @@
                 <a class="nav-link" <%= link_to "Sign up", signup_path %></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" <%= link_to "My Closet", generate_path %></a>
+                <a class="nav-link" <%= link_to "My Closet", user_path(current_user) %></a>
+            </li>
+            <li class="nav-items">
+                <a class="nav-link" <%= link_to "Log out", logout_path, method: :delete %></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Options </a>
