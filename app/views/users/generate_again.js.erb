@@ -1,0 +1,11 @@
+<% if !@random_top.nil?%>
+$("#top").html('<%= j link_to image_tag(@random_top.photo, width: 200, id:"top"),generate_again_path(:quad=>@random_top.quadrant,:category=>@random_top.clothing_category,:pastid => @random_top.id, :userid=>@random_top.user_id), remote: true %>') ;
+<% elsif !@random_top2.nil?%>
+$("#top2").html('<%= j link_to image_tag(@random_top2.photo, width: 200, id:"top2"),generate_again_path(:quad=>@random_top2.quadrant,:category=>@random_top2.clothing_category,:pastid => @random_top2.id, :userid=>@random_top2.user_id), remote: true %>') ;
+<% elsif !@random_bottom.nil?%>
+$("#bottom").html('<%= j link_to image_tag(@random_bottom.photo, width: 200, id:"bottom"),generate_again_path(:quad=>@random_bottom.quadrant,:category=>@random_bottom.clothing_category,:pastid => @random_bottom.id, :userid=>@random_bottom.user_id), remote: true %>') ;
+<% elsif !@random_socks.nil?%>
+$("#socks").html('<%= j link_to image_tag(@random_socks.photo, width: 200, id:"socks"),generate_again_path(:quad=>@random_socks.quadrant,:category=>@random_socks.clothing_category,:pastid => @random_socks.id, :userid=>@random_socks.user_id), remote: true %>') ;
+<% elsif !@random_shoes.nil?%>
+$("#shoes").html('<%= j link_to image_tag(@random_shoes.photo, width: 200, id:"shoes"),generate_again_path(:quad=>@random_shoes.quadrant,:category=>@random_shoes.clothing_category,:pastid => @random_shoes.id, :userid=>@random_shoes.user_id), remote: true %>') ;
+<%end%>

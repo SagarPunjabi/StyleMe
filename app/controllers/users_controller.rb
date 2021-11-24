@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
-
+  protect_from_forgery except: :generate_again
   # GET /users or /users.json
   def index
     @users = User.all
@@ -58,6 +58,28 @@ class UsersController < ApplicationController
     end
   end
 
+  def generate_again
+    if params[:quad] == 'Top' && params[:category] != %w[Fall/Spring-Jacket Winter-Coat]
+      @random_top = Clothe.where.not(id: params[:pastid]).where(user_id: params[:userid], quadrant: params[:quad],
+                                                                clothing_category: params[:category]).sample
+    elsif params[:quad] == 'Top'
+      @random_top = Clothe.where.not(id: params[:pastid]).where(user_id: params[:userid], quadrant: params[:quad],
+                                                                clothing_category: params[:category]).sample
+    elsif params[:quad] == 'Bottom'
+      @random_bottom = Clothe.where.not(id: params[:pastid]).where(user_id: params[:userid], quadrant: params[:quad],
+                                                                   clothing_category: params[:category]).sample
+    elsif params[:quad] == 'Socks'
+      @random_socks = Clothe.where.not(id: params[:pastid]).where(user_id: params[:userid], quadrant: params[:quad],
+                                                                  clothing_category: params[:category]).sample
+    elsif params[:quad] == 'Shoes'
+      @random_shoes = Clothe.where.not(id: params[:pastid]).where(user_id: params[:userid], quadrant: params[:quad],
+                                                                  clothing_category: params[:category]).sample
+    end
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
   def generate
     ip_address = if Rails.env.production?
                    request.remote_ip
@@ -74,6 +96,7 @@ class UsersController < ApplicationController
     @uri = URI(@url)
     @response = Net::HTTP.get(@uri)
     @output = JSON.parse(@response)
+    @clothes = Clothe.all
     if @output['current']['temp'] >= 70
       @random_top = Clothe.where(user_id: params[:user_id], quadrant: 'Top',
                                  clothing_category: %w[T-Shirt Button-down Dress]).sample
