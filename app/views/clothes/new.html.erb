@@ -4,6 +4,7 @@
     <h1>Upload your clothes here!</h1>
     <%= form_with(model: @clothe, local: true) do |f| %>
         <%= f.hidden_field :user_id %>
+<<<<<<< HEAD
         <%= f.label :quadrant %>
         <%= f.select :quadrant, ["Top","Bottom","Socks","Shoes","Accessory"],{}, class: 'form-select form-select-sm w-25', :required => true %>
         <%= f.label :clothing_category %>
@@ -12,6 +13,8 @@
         <%= f.color_field :color, class: 'upload-form h-50', :required => true %>
         <%= f.label :occasion %>
         <%= f.select :occasion, ["Casual","Business-Casual"],{}, class: 'form-select form-select-sm w-25', :required => true %>
+=======
+>>>>>>> add_api
         <%= f.label :photo%>
         <%= f.file_field :photo, :required => true%>
         <%= f.submit "Upload", class: "btn btn-primary w-25" %>

@@ -62,5 +62,12 @@ gem 'aws-sdk-s3', require: false
 gem 'bcrypt',  '3.1.13'
 gem 'rails-controller-testing'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+<<<<<<< HEAD
 gem 'dotenv-rails'
 gem 'geocoder'
+=======
+
+gem 'rest-client'
+gem 'base64'
+gem 'json'
+>>>>>>> add_api
