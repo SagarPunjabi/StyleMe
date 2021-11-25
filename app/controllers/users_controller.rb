@@ -62,8 +62,8 @@ class UsersController < ApplicationController
   def generate_again
     @new_clothe = Clothe.where.not(id: params[:pastid]).where(user_id: params[:userid], quadrant: params[:quad],
                                                               clothing_category: params[:category]).sample
-    if params[:quad] == 'Top' && params[:category] != %w[Fall/Spring-Jacket Winter-Coat]
-      @random_top = @new_clothe
+    if params[:quad] == 'Top' && (params[:category] == 'Winter-Coat' || params[:category] == 'Fall/Spring-Jacket')
+      @random_top2 = @new_clothe
     elsif params[:quad] == 'Top'
       @random_top = @new_clothe
     elsif params[:quad] == 'Bottom'
