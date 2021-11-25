@@ -51,7 +51,7 @@ class ClothesController < ApplicationController
   def update
     respond_to do |format|
       if @clothe.update(clothe_params)
-        format.html { redirect_to @clothe, notice: 'Clothe was successfully updated.' }
+        format.html { redirect_to user_path(@clothe.user_id), notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @clothe }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -62,9 +62,10 @@ class ClothesController < ApplicationController
 
   # DELETE /clothes/1 or /clothes/1.json
   def destroy
+    user_id = @clothe.user_id
     @clothe.destroy
     respond_to do |format|
-      format.html { redirect_to clothes_url, notice: 'Clothe was successfully destroyed.' }
+      format.html { redirect_to user_path(user_id), notice: 'Clothe was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
