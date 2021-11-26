@@ -1,7 +1,7 @@
 class Weather
   def initialize(user_id)
     ip_address = if Rails.env.production?
-                   request.remote_ip
+                   request.env['HTTP_X_FORWARDED_FOR']
                  else
                    Net::HTTP.get(URI.parse('http://checkip.amazonaws.com/')).squish
                  end
