@@ -15,7 +15,7 @@
                 <a class="nav-link" <%= link_to "Sign up", signup_path %></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" <%= link_to "My Closet", user_path(current_user) %></a>
+                <a class="nav-link" <%= link_to "My Closet", "/users/#{session[:user_id]}" %></a>
             </li>
             <li class="nav-items">
                 <a class="nav-link" <%= link_to "Log out", logout_path, method: :delete %></a>
