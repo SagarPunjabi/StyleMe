@@ -1,6 +1,6 @@
 # README
 
-<h1> Style Me! </h1>
+<h1> <a href ="http://outfitplanner-166.herokuapp.com/">Style Me! </a></h1>
 
 <h2> Functionality</h2>
 
