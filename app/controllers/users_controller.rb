@@ -79,9 +79,14 @@ class UsersController < ApplicationController
   end
 
   def generate
+    ip_address = if Rails.env.production?
+                   request.remote_ip
+                 else
+                   Net::HTTP.get(URI.parse('http://checkip.amazonaws.com/')).squish
+                 end
     user_id = params[:user_id]
     @clothes = Clothe.all
-    clothing = Weather.new(user_id)
+    clothing = Weather.new(ip_address, user_id)
     @output = clothing.get_output
     @random_top = clothing.get_top
     @random_top2 = clothing.get_top2

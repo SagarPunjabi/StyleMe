@@ -1,10 +1,5 @@
 class Weather
-  def initialize(user_id)
-    ip_address = if Rails.env.production?
-                   request.env['HTTP_X_FORWARDED_FOR']
-                 else
-                   Net::HTTP.get(URI.parse('http://checkip.amazonaws.com/')).squish
-                 end
+  def initialize(ip_address, user_id)
     location = Geocoder.search(ip_address)[0].data['loc']
     lat = location.split(',').first
     lon = location.split(',').last
