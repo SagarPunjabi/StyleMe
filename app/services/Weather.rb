@@ -54,8 +54,8 @@ class Weather
       Clothe.where(user_id: @userid, quadrant: 'Shoes',
                    clothing_category: %w[Sneakers Dress-Shoes Sandals]).sample
     elsif @output['current']['temp'] < 70 && @output['current']['temp'] >= 40
-      Clothe.where(user_id: @userid, quadrant: 'Top',
-                   clothing_category: %w[Hoodie Longsleeve T-Shirt Button-down Dress]).sample
+      Clothe.where(user_id: @userid, quadrant: 'Shoes',
+                   clothing_category: %w[Sneakers Dress-Shoes]).sample
     else
       Clothe.where(user_id: @userid, quadrant: 'Shoes',
                    clothing_category: %w[Sneakers Dress-Shoes Boots]).sample
@@ -66,6 +66,7 @@ class Weather
     Clothe.where(user_id: @userid, quadrant: 'Socks',
                  clothing_category: %w[Socks]).sample
   end
+
   def get_output
     @output
   end
