@@ -34,7 +34,11 @@ class ImageTag
                 end
             end
         }
-        return tag.capitalize!
+        if tag.nil?
+            return tag
+        else       
+            return tag.capitalize! 
+        end
     end
     def get_tags()
         quad = get_tag(@quadrants)
