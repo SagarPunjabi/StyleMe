@@ -8,18 +8,25 @@
     <a href="/" class="navbar-brand" style="font-family: 'Indie Flower', cursive;">Style Me!</a>
     <div class="navbar-collapse collapse" id="navbarCustom">
         <ul class="navbar-nav ml-auto">
+        <% if not !session[:user_id].nil? %>
             <li class="nav-item active">
                 <a class="nav-link" <%= link_to "Log In", login_path %></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" <%= link_to "Sign up", signup_path %></a>
             </li>
+        <% end %>
+        <% if !session[:user_id].nil? %>    
             <li class="nav-item">
                 <a class="nav-link" <%= link_to "My Closet", "/users/#{session[:user_id]}" %></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" <%= link_to "Upload Clothes", uploadclothes_path(:user_id) %></a>
             </li>
             <li class="nav-items">
                 <a class="nav-link" <%= link_to "Log out", logout_path, method: :delete %></a>
             </li>
+        <% end %>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Options </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
