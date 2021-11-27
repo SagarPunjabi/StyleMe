@@ -33,19 +33,16 @@ local:
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
 
-AWS_ACCESS_KEY_ID = AKIAZ4XFNIDB7KI4WYU6
-AWS_BUCKET=outfitplanner-bucket-pro
-AWS_SECRET_ACCESS_KEY=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
 
-amazon_dev:
-  service: S3
-  access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
-  secret_access_key: <%= Rails.application.credentials.aws[:secret_access_key] %>
-  region: <%= Rails.application.credentials.aws[:region] %>
-  bucket: <%= Rails.application.credentials.aws[:dev][:bucket] %>
-amazon_prod:
-  service: S3
-  access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
-  secret_access_key: <%= Rails.application.credentials.aws[:secret_access_key] %>
-  region: <%= Rails.application.credentials.aws[:region] %>
-  bucket: <%= Rails.application.credentials.aws[:prod][:bucket] %>
+# amazon_dev:
+#   service: S3
+#   access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
+#   secret_access_key: <%= Rails.application.credentials.aws[:secret_access_key] %>
+#   region: <%= Rails.application.credentials.aws[:region] %>
+#   bucket: <%= Rails.application.credentials.aws[:dev][:bucket] %>
+# amazon_prod:
+#   service: S3
+#   access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
+#   secret_access_key: <%= Rails.application.credentials.aws[:secret_access_key] %>
+#   region: <%= Rails.application.credentials.aws[:region] %>
+#   bucket: <%= Rails.application.credentials.aws[:prod][:bucket] %>
