@@ -34,6 +34,8 @@ class ImageTag
                 end
             end
         }
+        if tag.nil?
+            return tag
         return tag.capitalize!
     end
     def get_tags()
