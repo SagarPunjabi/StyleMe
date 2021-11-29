@@ -1,0 +1,79 @@
+/* mixins, variables, etc. */
+
+$dark-primary-blue: #EDBFB7;
+$light-primary-blue: #21a9af;
+$gray-medium-light: #eaeaea;
+
+.navbar {
+    background-color: #111344;
+}
+.card-div {
+    border-radius: 25px;
+    background:transparent;
+    border: solid 1px;
+  }
+  
+.big-text {
+    font-size: 200px !important;
+    font-family: sans-serif;
+  }
+/* navbar */
+.gradient-custom {
+    /* fallback for old browsers */
+    background: linear-gradient(#F9E784, #30848f 0%, rgb(123, 109, 141), rgb(64,153,145));
+  }
+  
+  .navbar > a:hover{
+    background-color: $light-primary-blue;
+    color: #ebeff1;
+  }
+  
+
+  
+  .nav-link {
+    color: #ebeff1!important;
+  }
+  
+  .navbar {
+    height: 5%;
+    padding: 10px;
+  }
+
+  .nav-item {
+      width: 115px;
+  }
+
+  
+  .gradient-custom .action-button, .header-blue .action-button:not(.disabled):active {
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 40px;
+    color: #ebeff1;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0.3rem 0.8rem;
+    background: transparent;
+    transition: background-color 0.25s;
+    outline: none;
+  }
+
+  .container {
+      width: 100%;
+  }
+
+  .logo {
+      width: 50%;
+  }
+    
+  .box-button {
+      border-radius: 10px;
+      border-color: $light-primary-blue;
+      border: 1px solid;
+      background: transparent;
+      transition: background-color 0.25s;
+      outline: none;
+      padding: 2%; 
+  }
+
+  .unboxed-button {
+      padding: 2%;
+  }
