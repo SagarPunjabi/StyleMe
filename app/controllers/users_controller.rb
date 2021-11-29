@@ -61,7 +61,7 @@ class UsersController < ApplicationController
 
   def generate_again
     @new_clothe = Clothe.where.not(id: params[:pastid]).where(user_id: params[:userid], quadrant: params[:quad],
-                                                              clothing_category: params[:category]).sample
+                                                              clothing_category: params[:category],occasion: params[:occ]).sample
     if params[:quad] == 'Top' && (params[:category] == 'Winter-Coat' || params[:category] == 'Fall/Spring-Jacket')
       @random_top2 = @new_clothe
     elsif params[:quad] == 'Top'
@@ -84,9 +84,13 @@ class UsersController < ApplicationController
                  else
                    Net::HTTP.get(URI.parse('http://checkip.amazonaws.com/')).squish
                  end
-    user_id = params[:user_id]
+    @occasion = params[:occasion]
+    if @occasion.nil?
+      @occasion="Casual"
+    end
+    @user_id = params[:user_id]
     @clothes = Clothe.all
-    clothing = Weather.new(ip_address, user_id)
+    clothing = Weather.new(ip_address, @user_id, @occasion)
     @output = clothing.get_output
     @random_top = clothing.get_top
     @random_top2 = clothing.get_top2
