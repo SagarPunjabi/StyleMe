@@ -1,8 +1,6 @@
 /* mixins, variables, etc. */
 
-$dark-primary-blue: #4db6ac;
-$light-primary-blue: #d4ecdd;
-$gray-medium-light: #eaeaea;
+
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -74,38 +72,6 @@ label {
 .myGallery .item:hover .caption {
   transform: translateY(0%);
 }
-/* customs for text */
-.fancy-text {
-  font-family: "Zen Kurenaido", sans-serif;
-  background-color: #9b9b9b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: -1px;
-  width: auto;
-  padding: 10px;
-  font-size: 32px;
-  text-align: center;
-  border-width: 1px;
-  border-color: #9b9b9b;
-  color: #000000;
-  border-style: outset;
-  border-radius: 2px;
-  box-shadow: 3px 1px 8px rgba(66, 66, 66, 0.75);
-  text-shadow: 0px 0px 1px rgba(66, 66, 66, 0.33);
-}
 
-/* customs for closet */
 
-.text-with-line {
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid #000;
-  line-height: 0.1em;
-  margin: 10px 0 20px;
-  background-color: $dark-primary-blue;
-}
-.text-with-line span {
-  background: $light-primary-blue;
-  padding: 0 10px;
-}
+
