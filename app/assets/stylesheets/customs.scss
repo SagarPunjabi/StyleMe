@@ -1,5 +1,5 @@
 /* mixins, variables, etc. */
-
+    
 $dark-primary-blue: #4db6ac;
 $light-primary-blue: #d4ecdd;
 $gray-medium-light: #eaeaea;
@@ -8,6 +8,25 @@ $gray-medium-light: #eaeaea;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+/* text */
+.p {
+  color: white !important;
+}
+.a:link {
+ color: white;
+}
+.a:active {
+  color: white;
+}
+.a:visited {
+  color: wheat;
+}
+.a:hover 
+{
+  background: transparent;
+  color: #2AB5A9;
 }
 
 /* forms */
@@ -97,18 +116,32 @@ label {
 
 /* customs for closet */
 
+
+
 .text-with-line {
-  width: 100%;
+  position: relative;
+  font-size: 30px;
+  z-index: 1;
+  overflow: hidden;
   text-align: center;
-  border-bottom: 1px solid #000;
-  line-height: 0.1em;
-  margin: 10px 0 20px;
+}
+.text-with-line:before, .text-with-line:after {
+  position: absolute;
+  top: 51%;
+  overflow: hidden;
+  width: 50%;
+  height: 1px;
+  content: '\a0';
   background-color: $dark-primary-blue;
 }
-.text-with-line span {
-  background: $light-primary-blue;
-  padding: 0 10px;
+.text-with-line:before {
+  margin-left: -50%;
+  text-align: right;
 }
+.color {
+  background-color: #ccc;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -152,4 +185,21 @@ label {
 .padding {
   margin-top: 200px;
   margin-bottom: 70px;
+}
+
+.green-btn {
+  background: #26a69a;
+  border: rgb(255, 255, 255);
+  color: black;
+  transition: background-color .2s ease-out
+}
+.green-btn:hover {
+  background: #2AB5A9;
+  color: black;
+}
+.green-btn:active {
+  box-shadow: 5px 10px #f5f6f7;
+}
+.green-btn:visited {
+  box-shadow: #4db6ac;
 }

@@ -1,11 +1,18 @@
 /* mixins, variables, etc. */
+@import "materialize/components/color-variables";
 
-$dark-primary-blue: #EDBFB7;
+$dark-primary-blue: #1b5927;
 $light-primary-blue: #21a9af;
 $gray-medium-light: #eaeaea;
 
 .navbar {
     background-color: #111344;
+}
+.nav-brand:hover {
+  border: solid;
+  border-color: #111344;
+  border: 2px;
+  border-radius: 2px;
 }
 .card-div {
     border-radius: 25px;
@@ -20,7 +27,9 @@ $gray-medium-light: #eaeaea;
 /* navbar */
 .gradient-custom {
     /* fallback for old browsers */
-    background: linear-gradient(#F9E784, #30848f 0%, rgb(123, 109, 141), rgb(64,153,145));
+    background: linear-gradient(#F9E784, #30848f 0%, rgb(30, 86, 99), rgb(64,153,145));
+    background-repeat: no-repeat;
+    background-size:auto 300%;
   }
   
   .navbar > a:hover{
@@ -65,7 +74,7 @@ $gray-medium-light: #eaeaea;
   }
     
   .box-button {
-      border-radius: 10px;
+      border-radius: 3px;
       border-color: $light-primary-blue;
       border: 1px solid;
       background: transparent;
@@ -76,4 +85,20 @@ $gray-medium-light: #eaeaea;
 
   .unboxed-button {
       padding: 2%;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  a:link {
+    color: white;
+  }
+
+  a:visited {
+    color: burlywood;
+  }
+  
+  a:hover {
+    color: white;
   }
