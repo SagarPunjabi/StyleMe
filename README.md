@@ -88,3 +88,9 @@ Users -> Clothes (is One to Many)
     
     
 </ul>
+
+<h2> Slides & Github pages </h2>
+<ul>
+    <li><a href="https://docs.google.com/presentation/d/1HTRw9HF7rCOq841LImFuk4qwOrrs0D78TnvMr2qmXj8/edit?usp=sharing"> Slides </a> </li>
+    <li><a href="https://sagarpunjabi.github.io/OutfitPlanner/">Github Page</a> </li>
+</ul>
