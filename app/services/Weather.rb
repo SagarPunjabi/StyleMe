@@ -14,6 +14,10 @@ class Weather
     @occasion = clothing_occassion
   end
 
+  def get_output
+    @output
+  end
+
   def get_top
     if @output['current']['temp'] >= 70
       Clothe.where(user_id: @userid, quadrant: 'Top',
@@ -63,7 +67,13 @@ class Weather
                  clothing_category: %w[Socks], occasion: @occasion).sample
   end
 
-  def get_output
-    @output
+  def get_accessory
+    if %w[Thunderstorm Drizzle Rain].include?(@output['current']['weather'][0]['main'])
+      Clothe.where(user_id: @userid, quadrant: 'Accessory',
+                   clothing_category: 'Umbrella', occasion: %w[Casual Business-Casual]).sample
+    elsif @output['current']['weather'][0]['main'] == 'Snow' || @output['current']['temp'] < 40
+      Clothe.where(user_id: @userid, quadrant: 'Accessory',
+                   clothing_category: %w[Gloves Scarf Hat], occasion: %w[Casual Business-Casual]).sample
+    end
   end
 end

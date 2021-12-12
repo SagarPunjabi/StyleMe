@@ -8,4 +8,6 @@ $("#bottom").html('<%= j link_to image_tag(@random_bottom.photo, width: 260,heig
 $("#socks").html('<%= j link_to image_tag(@random_socks.photo, width: 260,height: 260, id:"socks"),generate_again_path(:quad=>@random_socks.quadrant,:category=>@random_socks.clothing_category,:pastid => @random_socks.id, :userid=>@random_socks.user_id,:occ =>@random_socks.occasion), remote: true %>') ;
 <% elsif !@random_shoes.nil?%>
 $("#shoes").html('<%= j link_to image_tag(@random_shoes.photo, width: 260,height: 260, id:"shoes"),generate_again_path(:quad=>@random_shoes.quadrant,:category=>@random_shoes.clothing_category,:pastid => @random_shoes.id, :userid=>@random_shoes.user_id,:occ =>@random_shoes.occasion), remote: true %>') ;
+<% elsif !@random_accessory.nil?%>
+$("#accessory").html('<%= j link_to image_tag(@random_accessory.photo, width: 260,height: 260, id:"accessory"),generate_again_path(:quad=>@random_accessory.quadrant,:category=>@random_accessory.clothing_category,:pastid => @random_accessory.id, :userid=>@random_accessory.user_id,:occ =>@random_accessory.occasion), remote: true %>') ;
 <%end%>
