@@ -22,7 +22,7 @@ class ClothesController < ApplicationController
   # POST /clothes or /clothes.json
   def create
     @clothe = Clothe.new(clothe_params)
-
+    @clothe.clean = true
     respond_to do |format|
       if @clothe.save
         image_url = @clothe.photo.url

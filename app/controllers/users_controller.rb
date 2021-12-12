@@ -99,6 +99,48 @@ class UsersController < ApplicationController
     @random_shoes = clothing.get_shoes
   end
 
+  def dirty
+    @outfit_selected = params[:outfit_selected]
+    @top = params[:top]
+    @top2 = params[:top2]
+    @bottom = params[:bottom]
+    @socks = params[:socks]
+    @shoes = params[:shoes]
+
+    if !@top.nil?
+      @top = Clothe.where(id:@top)
+      @top.update(clean: false)
+    end
+
+    if !@top2.nil?
+      @top2 = Clothe.where(id: @top2)
+      @top2.update(clean: false)
+    end
+
+    if !@bottom.nil?
+      @bottom = Clothe.where(id: @bottom)
+      @bottom.update(clean: false)
+    end
+
+    if !@socks.nil?
+      @socks = Clothe.where(id: @socks)
+      @socks.update(clean: false)
+    end
+
+    if !@shoes.nil?
+      @shoes = Clothe.where(id: @shoes)
+      @shoes.update(clean: false)
+    end
+    
+    @user = User.find(params[:user_id])
+    @user_clothes = Clothe.where(user_id: @user.id, clean: false)
+   
+
+
+
+  end
+
+ 
   private
 
   # Use callbacks to share common setup or constraints between actions.

@@ -1,0 +1,16 @@
+<h3> Hi <%= @user.name%> your clothes need washing! </h3>
+<table>
+	<thead>
+		<tr>
+			<th> Dirty clothes </th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @user_clothes.each do |item| %>
+			<tr>
+				<td> <%= image_tag(item.photo, width: 200, heigh: 200) if item.photo.attached? %></td>
+			</tr>
+		<% end%>
+	</tbody>
+</table>
