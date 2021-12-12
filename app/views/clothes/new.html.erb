@@ -1,13 +1,20 @@
+<head>
+<% provide(:title, "Upload Clothes") %>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+</head>
 
+<%= render "layouts/header" %>
 
-<div class="container" style="margin: auto auto;">
+<div class="container" style="margin: auto auto; padding: 30px; text-align:center;">
     <h1>Upload your clothes here!</h1>
     <%= form_with(model: @clothe, local: true) do |f| %>
         <%= f.hidden_field :user_id %>
         <%= f.label :photo%>
         <%= f.file_field :photo, :required => true%>
-        <%= f.submit "Upload", class: "btn btn-primary w-25" %>
+        <%= f.submit "Upload", class: "btn green-btn w-25" %>
     <% end %>
 </div>
 
+<div>
 <%= link_to 'Back', 'javascript:history.go(-1);' %>
+</div>

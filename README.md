@@ -1,6 +1,6 @@
 # README
 
-<h1> <a href ="http://outfitplanner-166.herokuapp.com/">Style Me! </a></h1>
+<h1> <a href ="http://styleme-166.herokuapp.com/">Style Me! </a></h1>
 
 <h2> Functionality</h2>
 
@@ -87,4 +87,10 @@ Users -> Clothes (is One to Many)
     <li> json </li>
     
     
+</ul>
+
+<h2> Slides & Github pages </h2>
+<ul>
+    <li><a href="https://docs.google.com/presentation/d/1HTRw9HF7rCOq841LImFuk4qwOrrs0D78TnvMr2qmXj8/edit?usp=sharing"> Slides </a> </li>
+    <li><a href="https://sagarpunjabi.github.io/StyleMe/">Github Page</a> </li>
 </ul>
