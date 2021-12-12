@@ -7,17 +7,25 @@
 
 
 <div class="row">
+
   <div class="column left" style="width: 25%; margin-left: 5%;">
-    <div class="row center padding">
+  <div class="row center padding">
+    <h2 class="text-with-line"><span>Weather</span></h2>
+    <%@icon= @output['current']['weather'][0]["icon"]%>
+    <div class="weathergrid">
+  <div class="top-left"><p style="text-align:center;"><%= image_tag "http://openweathermap.org/img/wn/#{@icon}@2x.png"%></p></div>
+  <div class="bottom-left"><p style="text-align:center;"><%= @output['current']['weather'][0]["description"].capitalize%></p></div>
+  <div class="top-right"><b><p style="text-align:center; font-size:40px"><%= @output['current']['temp'].truncate%>°F</p></b></div>
+  <div class="bottom-right"><p style="text-align:center; font-size:13px">Feels like <%= @output['current']['feels_like'].truncate%>°F</p></div>
+</div>
+    <%if !@output['alerts'].nil?%>
+     <p style="color:red"><b>ALERT: <%=@output['alerts'][0]["event"].upcase%> </b></p>
+     <%end%>
+    </div>
+    <div class="row center">
       <h2 class="text-with-line"><span>Occasion</span></h2>
       <%= link_to "Casual",generate_path(:user_id => @user_id,:occasion => "Casual"),class: "btn green-btn divide"%>
       <%= link_to "Business-Casual",generate_path(:user_id => @user_id,:occasion => "Business-Casual"),class: "btn green-btn"%>
-    </div>
-    <div class="row center">
-    <h2 class="text-with-line"><span>Temperature</span></h2>
-      <div style="text-align: center;">
-        <%= @output['current']['temp']%>
-      </div>
     </div>
   </div>
 
@@ -26,26 +34,25 @@
       <h1> Your outfit for the day is: </h1>
       <div>
       <%if !@random_top.nil? && @random_top.photo.attached? %>
-      <%= link_to image_tag(@random_top.photo, width: 200),generate_again_path(:quad=>@random_top.quadrant,:category=>@random_top.clothing_category,:pastid => @random_top.id, :userid=>@random_top.user_id,:occ =>@random_top.occasion),id:"top",remote: true%>
+      <%= link_to image_tag(@random_top.photo, width: 260,height: 260),generate_again_path(:quad=>@random_top.quadrant,:category=>@random_top.clothing_category,:pastid => @random_top.id, :userid=>@random_top.user_id,:occ =>@random_top.occasion),id:"top",remote: true%>
       <%end%>
       <%if !@random_top2.nil? && @random_top2.photo.attached? %>
-      <%= link_to image_tag(@random_top2.photo, width: 200),generate_again_path(:quad=>@random_top2.quadrant,:category=>@random_top2.clothing_category,:pastid => @random_top2.id, :userid=>@random_top2.user_id,:occ =>@random_top2.occasion),id:"top2",remote: true%>
+      <%= link_to image_tag(@random_top2.photo, width: 260,height: 260),generate_again_path(:quad=>@random_top2.quadrant,:category=>@random_top2.clothing_category,:pastid => @random_top2.id, :userid=>@random_top2.user_id,:occ =>@random_top2.occasion),id:"top2",remote: true%>
       <%end%>
       </div>
       <div>
       <%if !@random_bottom.nil? && @random_bottom.photo.attached? %>
-      <%= link_to image_tag(@random_bottom.photo, width: 200),generate_again_path(:quad=>@random_bottom.quadrant,:category=>@random_bottom.clothing_category,:pastid => @random_bottom.id, :userid=>@random_bottom.user_id,:occ =>@random_bottom.occasion),id:"bottom",remote: true%>
+      <%= link_to image_tag(@random_bottom.photo, width: 260,height: 330),generate_again_path(:quad=>@random_bottom.quadrant,:category=>@random_bottom.clothing_category,:pastid => @random_bottom.id, :userid=>@random_bottom.user_id,:occ =>@random_bottom.occasion),id:"bottom",remote: true%>
       <%end%>   
       </div>
       <div>
       <%if !@random_socks.nil? && @random_socks.photo.attached? %>
-      <%= link_to image_tag(@random_socks.photo, width: 200),generate_again_path(:quad=>@random_socks.quadrant,:category=>@random_socks.clothing_category,:pastid => @random_socks.id, :userid=>@random_socks.user_id,:occ =>@random_socks.occasion),id:"socks",remote: true%>
+      <%= link_to image_tag(@random_socks.photo, width: 260,height: 260),generate_again_path(:quad=>@random_socks.quadrant,:category=>@random_socks.clothing_category,:pastid => @random_socks.id, :userid=>@random_socks.user_id,:occ =>@random_socks.occasion),id:"socks",remote: true%>
       <%end%> 
       <%if !@random_shoes.nil? && @random_shoes.photo.attached? %>
-      <%= link_to image_tag(@random_shoes.photo, width: 200),generate_again_path(:quad=>@random_shoes.quadrant,:category=>@random_shoes.clothing_category,:pastid => @random_shoes.id, :userid=>@random_shoes.user_id,:occ =>@random_shoes.occasion),id:"shoes",remote: true%>
+      <%= link_to image_tag(@random_shoes.photo, width: 260,height: 260),generate_again_path(:quad=>@random_shoes.quadrant,:category=>@random_shoes.clothing_category,:pastid => @random_shoes.id, :userid=>@random_shoes.user_id,:occ =>@random_shoes.occasion),id:"shoes",remote: true%>
       <%end%> 
       </div>
     </div>
-    <%= link_to 'Back', "/users/#{session[:user_id]}" %>
   </div>
 </div>

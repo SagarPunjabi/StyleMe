@@ -1,5 +1,5 @@
 /* mixins, variables, etc. */
-    
+
 $dark-primary-blue: #4db6ac;
 $light-primary-blue: #d4ecdd;
 $gray-medium-light: #eaeaea;
@@ -15,7 +15,7 @@ $gray-medium-light: #eaeaea;
   color: white !important;
 }
 .a:link {
- color: white;
+  color: white;
 }
 .a:active {
   color: white;
@@ -23,10 +23,9 @@ $gray-medium-light: #eaeaea;
 .a:visited {
   color: wheat;
 }
-.a:hover 
-{
+.a:hover {
   background: transparent;
-  color: #2AB5A9;
+  color: #2ab5a9;
 }
 
 /* forms */
@@ -116,8 +115,6 @@ label {
 
 /* customs for closet */
 
-
-
 .text-with-line {
   position: relative;
   font-size: 30px;
@@ -125,13 +122,14 @@ label {
   overflow: hidden;
   text-align: center;
 }
-.text-with-line:before, .text-with-line:after {
+.text-with-line:before,
+.text-with-line:after {
   position: absolute;
   top: 51%;
   overflow: hidden;
   width: 50%;
   height: 1px;
-  content: '\a0';
+  content: "\a0";
   background-color: $dark-primary-blue;
 }
 .text-with-line:before {
@@ -183,18 +181,17 @@ label {
 }
 
 .padding {
-  margin-top: 200px;
-  margin-bottom: 70px;
+  margin-top: 180px;
 }
 
 .green-btn {
   background: #26a69a;
   border: rgb(255, 255, 255);
   color: black;
-  transition: background-color .2s ease-out
+  transition: background-color 0.2s ease-out;
 }
 .green-btn:hover {
-  background: #2AB5A9;
+  background: #2ab5a9;
   color: black;
 }
 .green-btn:active {
@@ -202,4 +199,35 @@ label {
 }
 .green-btn:visited {
   box-shadow: #4db6ac;
+}
+.weathergrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "top-left top-right"
+    "bottom-left bottom-right";
+}
+
+.top-left {
+  grid-area: top-left;
+}
+
+.bottom-left {
+  grid-area: bottom-left;
+}
+
+.top-right {
+  grid-area: top-right;
+  align-self: flex-end;
+  margin-bottom: 15px;
+}
+
+.bottom-right {
+  grid-area: bottom-right;
+}
+.outfit {
+  padding-bottom: 25px;
 }
