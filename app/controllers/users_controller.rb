@@ -99,6 +99,9 @@ class UsersController < ApplicationController
     @random_shoes = clothing.get_shoes
   end
 
+  def ootd
+  end 
+
   def dirty
     @outfit_selected = params[:outfit_selected]
     @top = params[:top]

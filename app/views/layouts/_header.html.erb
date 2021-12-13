@@ -40,6 +40,8 @@
                         <ul class = "navbar-nav">
                             <li class="nav-item unboxed-button">
                                 <%= link_to "Laundry List", laundry_path(:user_id => session[:user_id])%>
+                            </li>
+                            <li class="nav-item unboxed-button">
                                 <%= link_to "Upload Clothes", uploadclothes_path(:user_id => current_user.id)%>
                             </li>
                             <li class="nav-item unboxed-button">
