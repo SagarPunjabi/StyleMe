@@ -1,3 +1,4 @@
+
 .clothing-carousel {
     height: 600px;
     margin: 0;
@@ -25,7 +26,7 @@
     pointer-events: none;
   }
   
-  div.item {
+  div.item-card {
     position: absolute;
     width: 300px;
     height: 400px;
@@ -38,31 +39,31 @@
     z-index: calc((var(--position) - var(--abs)));
   }
   
-  div.item:nth-of-type(1) {
+  div.item-card:nth-of-type(1) {
     --offset: 1;
     background-color: #90f1ef;
     background-image: url("blackpants.jpg");
   }
-  div.item:nth-of-type(2) {
+  div.item-card:nth-of-type(2) {
     --offset: 2;
     background-color: #ff70a6;
     background-image: url("redshirt.jpg");
 
   }
-  div.item:nth-of-type(3) {
+  div.item-card:nth-of-type(3) {
     --offset: 3;
     background-color: #ff9770;
     background-image: url("jeans.jpg");
 
 
   }
-  div.item:nth-of-type(4) {
+  div.item-card:nth-of-type(4) {
     --offset: 4;
     background-color: #ffd670;
     background-image: url("brownshirt.jpg");
 
   }
-  div.item:nth-of-type(5) {
+  div.item-card:nth-of-type(5) {
     --offset: 5;
     background-color: #e9ff70;
     background-image: url("kpants.jpg");
