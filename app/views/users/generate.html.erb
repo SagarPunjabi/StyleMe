@@ -9,7 +9,7 @@
 <div class="row">
 
   <div class="column left" style="width: 25%; margin-left: 5%;">
-  <div class="row center padding">
+  <div class="row center padding-above">
     <h2 class="text-with-line"><span>Weather</span></h2>
     <%@icon= @output['current']['weather'][0]["icon"]%>
     <div class="weathergrid">
@@ -22,11 +22,19 @@
      <p style="color:red"><b>ALERT: <%=@output['alerts'][0]["event"].upcase%> </b></p>
      <%end%>
     </div>
-    <div class="row center">
+    <div class="row center padding-below">
       <h2 class="text-with-line"><span>Occasion</span></h2>
       <%= link_to "Casual",generate_path(:user_id => @user_id,:occasion => "Casual"),class: "btn green-btn divide"%>
       <%= link_to "Business-Casual",generate_path(:user_id => @user_id,:occasion => "Business-Casual"),class: "btn green-btn"%>
     </div>
+    
+    <%if !@random_accessory.nil? && @random_accessory.photo.attached? %>
+    <div style="text-align: center;">
+    <h2 class="text-with-line padding-below"><span>Accessory</span></h2>
+      <%= link_to image_tag(@random_accessory.photo, width: 260,height: 260),generate_again_path(:quad=>@random_accessory.quadrant,:category=>@random_accessory.clothing_category,:pastid => @random_accessory.id, :userid=>@random_accessory.user_id,:occ =>@random_accessory.occasion),id:"accessory",remote: true%>
+       </div>
+      <%end%> 
+   
   </div>
 
   <div class="column right">

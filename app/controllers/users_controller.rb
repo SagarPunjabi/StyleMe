@@ -61,7 +61,7 @@ class UsersController < ApplicationController
 
   def generate_again
     @new_clothe = Clothe.where.not(id: params[:pastid]).where(user_id: params[:userid], quadrant: params[:quad],
-                                                              clothing_category: params[:category],occasion: params[:occ]).sample
+                                                              clothing_category: params[:category], occasion: params[:occ]).sample
     if params[:quad] == 'Top' && (params[:category] == 'Winter-Coat' || params[:category] == 'Fall/Spring-Jacket')
       @random_top2 = @new_clothe
     elsif params[:quad] == 'Top'
@@ -72,6 +72,8 @@ class UsersController < ApplicationController
       @random_socks = @new_clothe
     elsif params[:quad] == 'Shoes'
       @random_shoes = @new_clothe
+    elsif params[:quad] == 'Accessory'
+      @random_accessory = @new_clothe  
     end
     respond_to do |format|
       format.js {}
@@ -85,9 +87,7 @@ class UsersController < ApplicationController
                    Net::HTTP.get(URI.parse('http://checkip.amazonaws.com/')).squish
                  end
     @occasion = params[:occasion]
-    if @occasion.nil?
-      @occasion="Casual"
-    end
+    @occasion = 'Casual' if @occasion.nil?
     @user_id = params[:user_id]
     @clothes = Clothe.all
     clothing = Weather.new(ip_address, @user_id, @occasion)
@@ -97,6 +97,7 @@ class UsersController < ApplicationController
     @random_bottom = clothing.get_bottom
     @random_socks = clothing.get_socks
     @random_shoes = clothing.get_shoes
+    @random_accessory = clothing.get_accessory
   end
 
   def ootd
