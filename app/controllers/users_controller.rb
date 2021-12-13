@@ -98,19 +98,19 @@ class UsersController < ApplicationController
     @random_socks = clothing.get_socks
     @random_shoes = clothing.get_shoes
     @random_accessory = clothing.get_accessory
+              
+    @ootd = {top: @random_top, jacket: @random_top2, bottom: @random_bottom, socks: @random_socks, shoes: @random_shoes}
+
   end
 
   def ootd
-  end 
-
-  def dirty
-    @outfit_selected = params[:outfit_selected]
     @top = params[:top]
-    @top2 = params[:top2]
+    @jacket = params[:top2]
     @bottom = params[:bottom]
     @socks = params[:socks]
     @shoes = params[:shoes]
-
+    
+    
     if !@top.nil?
       @top = Clothe.where(id:@top)
       @top.update(clean: false)
@@ -135,6 +135,17 @@ class UsersController < ApplicationController
       @shoes = Clothe.where(id: @shoes)
       @shoes.update(clean: false)
     end
+       
+  end 
+
+  def dirty
+    @outfit_selected = params[:outfit_selected]
+    @top = params[:top]
+    @top2 = params[:top2]
+    @bottom = params[:bottom]
+    @socks = params[:socks]
+    @shoes = params[:shoes]
+
     
     @user = User.find(params[:user_id])
     @user_clothes = Clothe.where(user_id: @user.id, clean: false)

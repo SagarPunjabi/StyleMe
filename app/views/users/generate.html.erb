@@ -26,6 +26,7 @@
       <h2 class="text-with-line"><span>Occasion</span></h2>
       <%= link_to "Casual",generate_path(:user_id => @user_id,:occasion => "Casual"),class: "btn green-btn divide"%>
       <%= link_to "Business-Casual",generate_path(:user_id => @user_id,:occasion => "Business-Casual"),class: "btn green-btn"%>
+      <%= button_to "Pick outfit",ootd_path(@ootd),:method => :patch, class: "btn green-btn divide"%>
     </div>
     
     <%if !@random_accessory.nil? && @random_accessory.photo.attached? %>

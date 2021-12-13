@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get '/generate_again', to: 'users#generate_again', as: :generate_again
   get '/closet', to: 'sessions#show'
   get '/laundry', to: 'users#dirty'
+  patch '/ootd', to: 'users#ootd'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
