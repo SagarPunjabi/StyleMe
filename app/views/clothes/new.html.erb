@@ -5,14 +5,36 @@
 
 <%= render "layouts/header" %>
 
-<div class="container" style="margin: auto auto; padding: 30px; text-align:center;">
+
+<div class="container-form" style="margin: auto auto; padding: 30px; text-align:center;">
     <h1>Upload your clothes here!</h1>
-    <%= form_with(model: @clothe, local: true) do |f| %>
-        <%= f.hidden_field :user_id %>
-        <%= f.label :photo%>
-        <%= f.file_field :photo, :required => true%>
-        <%= f.submit "Upload", class: "btn green-btn w-25" %>
-    <% end %>
+    <div>
+        <div class="clothing-carousel"> 
+            <input type="radio" name="position" checked />
+            <input type="radio" name="position" />
+            <input type="radio" name="position" />
+            <input type="radio" name="position" />
+            <input type="radio" name="position" />
+            <main id="carousel">
+                <div class="item">
+                </div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            <main>
+        </div>
+    </div>
+    <div>
+        <%= form_with(model: @clothe, local: true) do |f| %>
+            <%= f.hidden_field :user_id %>
+            <%= f.label :photo%>
+            <div>
+                <%= f.file_field :photo, :required => true, style: "width:250px"%>
+            </div>
+            <%= f.submit "Upload", class: "btn green-btn w-25" %>
+        <% end %>
+    </div>
 </div>
 
 <div>
