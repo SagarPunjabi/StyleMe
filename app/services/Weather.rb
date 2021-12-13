@@ -21,31 +21,31 @@ class Weather
   def get_top
     if @output['current']['temp'] >= 70
       Clothe.where(user_id: @userid, quadrant: 'Top',
-                   clothing_category: %w[T-Shirt Button-down Dress], occasion: @occasion).sample
+                   clothing_category: %w[T-Shirt Button-down Dress], occasion: @occasion, clean: true).sample
     else
       Clothe.where(user_id: @userid, quadrant: 'Top',
-                   clothing_category: %w[Hoodie Longsleeve T-Shirt Button-down Dress], occasion: @occasion).sample
+                   clothing_category: %w[Hoodie Longsleeve T-Shirt Button-down Dress], occasion: @occasion, clean: true).sample
     end
   end
 
   def get_top2
     if @output['current']['temp'] >= 40 && @output['current']['temp'] <= 60
       Clothe.where(user_id: @userid, quadrant: 'Top',
-                   clothing_category: %w[Fall/Spring-Jacket], occasion: @occasion).sample
+                   clothing_category: %w[Fall/Spring-Jacket], occasion: @occasion, clean: true).sample
 
     elsif @output['current']['temp'] < 40
       Clothe.where(user_id: @userid, quadrant: 'Top',
-                   clothing_category: %w[Winter-Coat], occasion: @occasion).sample
+                   clothing_category: %w[Winter-Coat], occasion: @occasion, clean: true).sample
     end
   end
 
   def get_bottom
     if @output['current']['temp'] >= 70
       Clothe.where(user_id: @userid, quadrant: 'Bottom',
-                   clothing_category: %w[Shorts Skirt], occasion: @occasion).sample
+                   clothing_category: %w[Shorts Skirt], occasion: @occasion, clean: true).sample
     else
       Clothe.where(user_id: @userid, quadrant: 'Bottom',
-                   clothing_category: %w[Jeans Pants Leggings Sweatpants Skirt], occasion: @occasion).sample
+                   clothing_category: %w[Jeans Pants Leggings Sweatpants Skirt], occasion: @occasion, clean: true).sample
     end
   end
 

@@ -1,18 +1,25 @@
-<h3> Hi <%= @user.name%> your clothes need washing! </h3>
-<table>
-	<thead>
-		<tr>
-			<th> Dirty clothes </th>
-		</tr>
-	</thead>
 
-	<tbody>
-		<% @user_clothes.each do |item| %>
-			<tr>
-				<td> <%= image_tag(item.photo, width: 200, heigh: 200) if item.photo.attached? %></td>
-			</tr>
-		<% end%>
-	</tbody>
-</table>
+<!DOCTYPE html>
+<html>
 
-<%= button_to "Pick outfit",wash_path(:user_id => session[:user_id]),:method => :patch, class: "btn green-btn divide"%>
+<header>
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+	<%= render "layouts/header" %>
+	<p id="notice"><%= notice %></p>
+</header>
+<body>
+	<div style="text-align: center">
+		<h1 class="center">These clothes need washing!</h1>
+		<br>
+		<div>
+			<h2 class="text-with-line"><span>Tops</span></h2>
+			<%= render 'dirty_clothes', quad: "Top" %>
+			<h2 class="text-with-line"><span>Bottoms</span></h2>
+			<%= render 'dirty_clothes', quad: "Bottom" %>
+			<h2 class="text-with-line"><span>Socks</span></h2>
+			<%= render 'dirty_clothes', quad: "Socks" %>
+		</div>
+	</div>
+	<%= button_to "Wash clothes",wash_path(:user_id => session[:user_id]),:method => :patch, class: "btn green-btn divide"%>
+</body>
+</html>
