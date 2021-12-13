@@ -64,7 +64,7 @@ class Weather
 
   def get_socks
     Clothe.where(user_id: @userid, quadrant: 'Socks',
-                 clothing_category: %w[Socks], occasion: @occasion).sample
+                 clothing_category: %w[Socks], occasion: @occasion , clean: true).sample
   end
 
   def get_accessory

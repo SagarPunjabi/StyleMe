@@ -61,7 +61,7 @@ class UsersController < ApplicationController
 
   def generate_again
     @new_clothe = Clothe.where.not(id: params[:pastid]).where(user_id: params[:userid], quadrant: params[:quad],
-                                                              clothing_category: params[:category], occasion: params[:occ]).sample
+                                                              clothing_category: params[:category], occasion: params[:occ], clean: true).sample
     if params[:quad] == 'Top' && (params[:category] == 'Winter-Coat' || params[:category] == 'Fall/Spring-Jacket')
       @random_top2 = @new_clothe
     elsif params[:quad] == 'Top'
@@ -73,7 +73,7 @@ class UsersController < ApplicationController
     elsif params[:quad] == 'Shoes'
       @random_shoes = @new_clothe
     elsif params[:quad] == 'Accessory'
-      @random_accessory = @new_clothe  
+      @random_accessory = @new_clothe
     end
     respond_to do |format|
       format.js {}
@@ -98,9 +98,9 @@ class UsersController < ApplicationController
     @random_socks = clothing.get_socks
     @random_shoes = clothing.get_shoes
     @random_accessory = clothing.get_accessory
-              
-    @ootd = {top: @random_top, jacket: @random_top2, bottom: @random_bottom, socks: @random_socks, shoes: @random_shoes}
 
+    @ootd = { top: @random_top, jacket: @random_top2, bottom: @random_bottom, socks: @random_socks,
+              shoes: @random_shoes }
   end
 
   def ootd
@@ -109,36 +109,34 @@ class UsersController < ApplicationController
     @bottom = params[:bottom]
     @socks = params[:socks]
     @shoes = params[:shoes]
-    
-    
-    if !@top.nil?
-      @top = Clothe.where(id:@top)
+
+    unless @top.nil?
+      @top = Clothe.where(id: @top)
       @top.update(clean: false)
     end
 
-    if !@top2.nil?
+    unless @top2.nil?
       @top2 = Clothe.where(id: @top2)
       @top2.update(clean: false)
     end
 
-    if !@bottom.nil?
+    unless @bottom.nil?
       @bottom = Clothe.where(id: @bottom)
       @bottom.update(clean: false)
     end
 
-    if !@socks.nil?
+    unless @socks.nil?
       @socks = Clothe.where(id: @socks)
       @socks.update(clean: false)
     end
 
-    if !@shoes.nil?
+    unless @shoes.nil?
       @shoes = Clothe.where(id: @shoes)
       @shoes.update(clean: false)
     end
-       
-  end 
+  end
 
-  def laundry 
+  def laundry
     @user = User.find(params[:user_id])
     @user_clothes = Clothe.where(user_id: @user.id, clean: false)
   end
@@ -146,17 +144,14 @@ class UsersController < ApplicationController
   def wash
     @user = User.find(session[:user_id])
     @used_clothes = Clothe.where(user_id: @user.id, clean: false)
-    
+
     @used_clothes.each do |clothing|
       clothing.update(clean: true)
     end
 
     redirect_to @user
-
-  
   end
 
- 
   private
 
   # Use callbacks to share common setup or constraints between actions.
