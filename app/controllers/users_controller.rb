@@ -138,21 +138,22 @@ class UsersController < ApplicationController
        
   end 
 
-  def dirty
-    @outfit_selected = params[:outfit_selected]
-    @top = params[:top]
-    @top2 = params[:top2]
-    @bottom = params[:bottom]
-    @socks = params[:socks]
-    @shoes = params[:shoes]
-
-    
+  def laundry 
     @user = User.find(params[:user_id])
     @user_clothes = Clothe.where(user_id: @user.id, clean: false)
-   
+  end
 
+  def wash
+    @user = User.find(session[:user_id])
+    @used_clothes = Clothe.where(user_id: @user.id, clean: false)
+    
+    @used_clothes.each do |clothing|
+      clothing.update(clean: true)
+    end
 
+    redirect_to @user
 
+  
   end
 
  
