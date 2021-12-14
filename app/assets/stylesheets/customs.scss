@@ -246,6 +246,7 @@ label {
   border: transparent;
   box-shadow: transparent !important; 
   padding: 0 0 0 0 !important;
+  background: transparent;
 }
 .transparent-btn:hover {
   background: transparent !important;
@@ -266,4 +267,10 @@ label {
 
 .static:hover {
   opacity:0;
+}
+
+/* error handling */ 
+
+#error_explanation {
+  background: transparent !important;
 }
