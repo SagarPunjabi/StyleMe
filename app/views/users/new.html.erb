@@ -5,7 +5,7 @@
 <%= render "layouts/header" %>
 <div class="row justify-content-center" style="margin: 80px 20px 10px 30px;">  
   <div class="col-md-6 col-md-offset-3">
-    <h1 align="center">Sign up</h1>
+    <h1 class="text-with-line" style="padding-bottom: 10px;">Sign up</h1>
       <%= form_with(model: @user, local: true) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <%= f.label :name %>

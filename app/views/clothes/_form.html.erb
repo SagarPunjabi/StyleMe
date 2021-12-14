@@ -1,3 +1,4 @@
+<div style="text-align:center;">
 <%= form_with(model: clothe) do |form| %>
   <% if clothe.errors.any? %>
     <div id="error_explanation">
@@ -27,7 +28,7 @@
 
   <div class="field">
     <%= form.label :color %>
-    <%= form.color_field :color,value:@clothe.color, class: 'upload-form h-50 w-50', :required => true %>
+    <%= form.color_field :color,value:@clothe.color, class: 'upload-form h-100 w-50', :required => true %>
   </div>
 
   <div class="field">
@@ -37,7 +38,8 @@
 <div class="field">
   </div>
     <div class="actions">
-      <%= form.submit "Save" %>
+      <%= form.submit "Save" ,class: "btn green-btn" %>
     </div>
 <% end %>
 
+</div>
