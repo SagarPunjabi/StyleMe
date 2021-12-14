@@ -29,10 +29,17 @@
       <%= button_to "Pick outfit",ootd_path(@ootd),:method => :patch, class: "btn green-btn divide"%>
     </div>
     
-    <%if !@random_accessory.nil? && @random_accessory.photo.attached? %>
-    <div style="text-align: center;">
+    <%if %w[Thunderstorm Drizzle Rain].include?(@output['current']['weather'][0]['main']) || !@random_accessory.nil? && @random_accessory.photo.attached? %>
+    <div>
     <h2 class="text-with-line padding-below"><span>Accessory</span></h2>
+    </div>
+    <div style="display:flex;">
+    <%if !@random_accessory.nil? && @random_accessory.photo.attached?%>
       <%= link_to image_tag(@random_accessory.photo, width: 260,height: 260),generate_again_path(:quad=>@random_accessory.quadrant,:category=>@random_accessory.clothing_category,:pastid => @random_accessory.id, :userid=>@random_accessory.user_id,:occ =>@random_accessory.occasion),id:"accessory",remote: true%>
+      <%end%>
+      <%if %w[Thunderstorm Drizzle Rain].include?(@output['current']['weather'][0]['main'])%>
+     <%= image_tag "blackumbrella.jpeg", width: 260,height: 260%>
+    <%end%>
        </div>
       <%end%> 
    

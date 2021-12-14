@@ -64,14 +64,14 @@ class Weather
 
   def get_socks
     Clothe.where(user_id: @userid, quadrant: 'Socks',
-                 clothing_category: %w[Socks], occasion: @occasion , clean: true).sample
+                 clothing_category: %w[Socks], occasion: @occasion, clean: true).sample
   end
 
   def get_accessory
-    if %w[Thunderstorm Drizzle Rain].include?(@output['current']['weather'][0]['main'])
-      Clothe.where(user_id: @userid, quadrant: 'Accessory',
-                   clothing_category: 'Umbrella', occasion: %w[Casual Business-Casual]).sample
-    elsif @output['current']['weather'][0]['main'] == 'Snow' || @output['current']['temp'] < 40
+    # if %w[Thunderstorm Drizzle Rain].include?(@output['current']['weather'][0]['main'])
+    #   Clothe.where(user_id: @userid, quadrant: 'Accessory',
+    #                clothing_category: 'Umbrella', occasion: %w[Casual Business-Casual]).sample
+    if @output['current']['weather'][0]['main'] == 'Snow' || @output['current']['temp'] < 40
       Clothe.where(user_id: @userid, quadrant: 'Accessory',
                    clothing_category: %w[Gloves Scarf Hat], occasion: %w[Casual Business-Casual]).sample
     end
