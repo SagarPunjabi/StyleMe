@@ -18,7 +18,12 @@ $gray-medium-light: #ffffff;
     border-radius: 25px;
     background:transparent;
     border: solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
   }
+  
   
 .big-text {
     font-size: 200px !important;
