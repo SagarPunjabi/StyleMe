@@ -3,7 +3,7 @@
 
 $dark-primary-blue: #1b5927;
 $light-primary-blue: #21a9af;
-$gray-medium-light: #eaeaea;
+$gray-medium-light: #ffffff;
 
 .navbar {
     background-color: #111344;
@@ -91,14 +91,26 @@ $gray-medium-light: #eaeaea;
     justify-content: space-between;
   }
 
-  a:link {
-    color: white;
-  }
+  /* unvisited link */
+a:link {
+  color: rgb(255, 255, 255) !important;
+}
 
-  a:visited {
-    color: burlywood;
-  }
-  
-  a:hover {
-    color: white;
-  }
+/* visited link */
+a:visited {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(255, 255, 255) !important;
+  background-color: transparent !important;
+  border: #fff5ee;
+  padding: 10px;
+  font-size: 120%;
+}
+
+/* selected link */
+a:active {
+  color: rgb(226, 255, 227) !important;
+}
