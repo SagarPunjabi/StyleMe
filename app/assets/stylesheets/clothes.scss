@@ -1,4 +1,26 @@
 // Place all the styles related to the Clothes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#primary_color{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
 
+#primary_color::-webkit-color-swatch-wrapper {
+    padding: 0; 
+}
+#primary_color::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+.upload-form {
+    width: 100px;
+    height: 30px !important;
+    shape-outside: none;
+    border: transparent;
+}
