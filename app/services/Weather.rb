@@ -68,9 +68,6 @@ class Weather
   end
 
   def get_accessory
-    # if %w[Thunderstorm Drizzle Rain].include?(@output['current']['weather'][0]['main'])
-    #   Clothe.where(user_id: @userid, quadrant: 'Accessory',
-    #                clothing_category: 'Umbrella', occasion: %w[Casual Business-Casual]).sample
     if @output['current']['weather'][0]['main'] == 'Snow' || @output['current']['temp'] < 40
       Clothe.where(user_id: @userid, quadrant: 'Accessory',
                    clothing_category: %w[Gloves Scarf Hat], occasion: %w[Casual Business-Casual]).sample

@@ -26,10 +26,11 @@
       <h2 class="text-with-line"><span>Occasion</span></h2>
       <%= link_to "Casual",generate_path(:user_id => @user_id,:occasion => "Casual"),class: "btn green-btn divide"%>
       <%= link_to "Business-Casual",generate_path(:user_id => @user_id,:occasion => "Business-Casual"),class: "btn green-btn"%>
-      <h2 class="text-with-line" style="padding-top: 20px;"><span>Choice</span></h2>
-      <%= button_to "Pick outfit",ootd_path(@ootd),:method => :patch, class: "btn green-btn divide"%>
     </div>
-    
+     <div class="row center">
+    <h2 class="text-with-line" ><span>Choice</span></h2>
+      <%= button_to "Pick outfit",ootd_path(@ootd),:method => :patch, class: "btn green-btn divide"%>
+      </div>
     <%if %w[Thunderstorm Drizzle Rain].include?(@output['current']['weather'][0]['main']) || !@random_accessory.nil? && @random_accessory.photo.attached? %>
     <div>
     <h2 class="text-with-line padding-below"><span>Accessory</span></h2>
