@@ -6,14 +6,17 @@
 <%= render "layouts/header" %>
 
 <script>
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }
     function scrolldiv(div_id) {
         var elem = document.getElementById(div_id);
         elem.scrollIntoView(false);
     }
 </script>
 
-<!-- Log In --> 
-<div class="row justify-content-center" style="margin: 80px 20px 10px 30px;">  
+<!-- home page --> 
+<div id="start" class="row justify-content-center" style="margin: 80px 20px 10px 30px;">  
   <div class="col-md-6 col-md-offset-3" style="padding-top: 50px; padding-bottom: 2px;">
     <div class="center-it">
         <button class="btn transparent-btn static" onclick="scrolldiv('begin-exploring')"> <i aria-hidden="true"></i> &nbsp; <%= image_tag("downarrowgif.gif", style: 'height:40%; width:40%; border-radius: 50%;', :alt => "Arrow pointing downwards") %></button>
@@ -31,7 +34,9 @@
 </div>
 <div id = "begin-exploring" class="row justify-content-center" style="margin: 80px 20px 10px 30px;">  
   <div class="card-div col-md-6 col-md-offset-3" align="center">
-    <h1 style="width: 200px;"> Two simple steps ... </h1> 
+    <h1 style="width: 200px;"> Two simple steps ... </h1>
+    <hr> 
+    <button class="btn transparent-btn active" style="width: 100px;" onclick="scrolldiv('outfitready')"> <i aria-hidden="true"></i> &nbsp; <%= image_tag("downarrowgif.gif", style: 'height:40%; width:40%; border-radius: 50%;', :alt => "Arrow pointing downwards") %></button>
   </div>
 
   <div class="col-md-6 col-md-offset-3">
@@ -39,13 +44,14 @@
   </div>
 </div>
 
-<div class="row justify-content-center" style="margin: 80px 20px 10px 30px;">  
+<div id= "outfitready" class="row justify-content-center" style="margin: 80px 20px 10px 30px;">  
   <div class=" col-md-6 col-md-offset-3" align="center">
     <%= image_tag("outfit.png", style: 'height:80%; width:80%;', :alt => "outfit showing pictures of clothes and weather") %>
   </div>
 
   <div class="card-div col-md-6 col-md-offset-3">
-    <h1 style="width: 200px;"> and voila! your outfit is ready! </h1> 
+    <h1 style="width: 200px;"> and voila! your outfit is ready! </h1>
+    <button class="btn transparent-btn active" style="width: 100px;" onclick="scrolldiv('start')"> <i aria-hidden="true"></i> &nbsp; <%= image_tag("uparrowgif.gif", style: 'height:40%; width:40%; border-radius: 50%;', :alt => "Arrow pointing downwards") %></button> 
   </div>
 </div>
 
