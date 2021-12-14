@@ -3,11 +3,10 @@
   <%if specs.quadrant==quad%>
      <div class="item">
      <%= link_to edit_clothe_path(specs) do %>
-      <%= image_tag(specs.photo) if specs.photo.attached? %>
+      <%= image_tag(specs.photo, style:"border-radius:50%;") if specs.photo.attached? %>
       <% end %>
       <span class="caption"> <%= specs.quadrant %>
         <%= specs.clothing_category %>
-        <%= specs.color %>
         <%= specs.occasion %></span>
       </div>
   <% end %>  

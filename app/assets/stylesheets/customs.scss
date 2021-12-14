@@ -24,7 +24,7 @@ $gray-medium-light: #eaeaea;
   color: wheat;
 }
 .a:hover {
-  background: transparent;
+  background: white;
   color: #2ab5a9;
 }
 
@@ -188,14 +188,14 @@ label {
   margin-bottom: 35px;
 }
 .green-btn {
-  background: #26a69a;
+  background: #26a69a !important;
   border: rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255) !important;
   transition: background-color 0.2s ease-out;
 }
 .green-btn:hover {
-  background: #59dfd3;
-  color: rgb(255, 255, 255);
+  background: #59dfd3 !important;
+  color: rgb(255, 255, 255) !important;
 }
 .green-btn:active {
   box-shadow: 5px 10px #f5f6f7;
