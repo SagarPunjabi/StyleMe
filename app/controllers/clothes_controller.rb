@@ -38,7 +38,7 @@ class ClothesController < ApplicationController
         color = color_api.get_clothing_color()
         @clothe.update(color: color)
 
-        format.html { redirect_to edit_clothe_path(@clothe), notice: 'Clothe was successfully created.' }
+        format.html { redirect_to edit_clothe_path(@clothe) }
         format.json { render :show, status: :created, location: @clothe }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class ClothesController < ApplicationController
   def update
     respond_to do |format|
       if @clothe.update(clothe_params)
-        format.html { redirect_to user_path(@clothe.user_id), notice: 'Article was successfully updated.' }
+        format.html { redirect_to user_path(@clothe.user_id) }
         format.json { render :show, status: :ok, location: @clothe }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,7 +65,7 @@ class ClothesController < ApplicationController
     user_id = @clothe.user_id
     @clothe.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(user_id), notice: 'Clothe was successfully destroyed.' }
+      format.html { redirect_to user_path(user_id) }
       format.json { head :no_content }
     end
   end

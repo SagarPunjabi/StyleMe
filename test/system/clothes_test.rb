@@ -21,7 +21,7 @@ class ClothesTest < ApplicationSystemTestCase
     fill_in "User", with: @clothe.user_id
     click_on "Create Clothe"
 
-    assert_text "Clothe was successfully created"
+    
     click_on "Back"
   end
 
@@ -36,7 +36,7 @@ class ClothesTest < ApplicationSystemTestCase
     fill_in "User", with: @clothe.user_id
     click_on "Update Clothe"
 
-    assert_text "Clothe was successfully updated"
+    
     click_on "Back"
   end
 
@@ -46,6 +46,6 @@ class ClothesTest < ApplicationSystemTestCase
       click_on "Destroy", match: :first
     end
 
-    assert_text "Clothe was successfully destroyed"
+    
   end
 end

@@ -13,9 +13,8 @@
     <%= render 'form', clothe: @clothe %>
 </div>
 <div class="btn" style="display: flex; justify-content:center !important;">
-        <%= button_to 'Destroy', @clothe, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= button_to 'Delete', @clothe, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
 
 
-<%= link_to 'Back', 'javascript:history.go(-1);' %> 
 
