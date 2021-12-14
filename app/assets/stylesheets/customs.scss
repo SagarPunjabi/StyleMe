@@ -190,12 +190,12 @@ label {
 .green-btn {
   background: #26a69a;
   border: rgb(255, 255, 255);
-  color: black;
+  color: rgb(255, 255, 255);
   transition: background-color 0.2s ease-out;
 }
 .green-btn:hover {
-  background: #2ab5a9;
-  color: black;
+  background: #59dfd3;
+  color: rgb(255, 255, 255);
 }
 .green-btn:active {
   box-shadow: 5px 10px #f5f6f7;
@@ -233,4 +233,37 @@ label {
 }
 .outfit {
   padding-bottom: 25px;
+}
+
+.center-it {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transparent-btn {
+  background: transparent !important;
+  border: transparent;
+  box-shadow: transparent !important; 
+  padding: 0 0 0 0 !important;
+}
+.transparent-btn:hover {
+  background: transparent !important;
+}
+.transparent-btn:active {
+  box-shadow: transparent;
+  border:transparent
+}
+.transparent-btn:visited {
+  box-shadow: transparent;
+  border: transparent;
+}
+
+/* images */
+.static {
+  position:absolute;
+}
+
+.static:hover {
+  opacity:0;
 }
