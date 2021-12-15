@@ -97,12 +97,12 @@ $gray-medium-light: #ffffff;
 
   .unboxed-button:hover, .active
   {
-    background: $light-primary-blue;
+    background: #0d4362;
   }
 
   .unboxed-button:active 
   {
-    background: $dark-primary-blue;
+    background: #0d4362;
   }
 
   .navbar {
@@ -132,7 +132,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: rgb(226, 255, 227) !important;
+  color: rgb(109, 156, 110) !important;
 }
 
 
