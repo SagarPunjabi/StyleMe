@@ -47,6 +47,6 @@ class ClothesControllerTest < ActionDispatch::IntegrationTest
       delete clothe_url(@clothe)
     end
 
-    assert_redirected_to clothes_url
+    assert_redirected_to '/users/1'
   end
 end

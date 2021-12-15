@@ -28,8 +28,8 @@
       <%= link_to "Business-Casual",generate_path(:user_id => @user_id,:occasion => "Business-Casual"),class: "btn green-btn"%>
     </div>
      <div class="row center">
-    <h2 class="text-with-line" ><span>Choice</span></h2>
-      <%= button_to "Pick outfit",ootd_path(@ootd),:method => :patch, class: "btn green-btn divide"%>
+    <h2 class="text-with-line" ><span>Pick Outfit</span></h2>
+      <%= button_to "Wear",ootd_path(@ootd),:method => :patch, data: { confirm: 'This outfit has been added to your laundry!' }, class: "btn green-btn divide"%>
       </div>
     <%if %w[Thunderstorm Drizzle Rain].include?(@output['current']['weather'][0]['main']) || !@random_accessory.nil? && @random_accessory.photo.attached? %>
     <div>

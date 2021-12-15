@@ -16,7 +16,7 @@
 </script>
 
 <!-- home page --> 
-<div id="start" class="row justify-content-center" style="margin: 80px 20px 10px 30px;">  
+<div id="start" class="row justify-content-center" style="margin: 80px 20px 10px 0px;">  
   <div class="col-md-6 col-md-offset-3" style="padding-top: 50px; padding-bottom: 2px;">
     <div class="center-it">
         <button class="btn transparent-btn static" onclick="scrolldiv('begin-exploring')"> <i aria-hidden="true"></i> &nbsp; <%= image_tag("downarrowgif.gif", style: 'height:40%; width:40%; border-radius: 50%;', :alt => "Arrow pointing downwards") %></button>
@@ -25,7 +25,7 @@
   </div>
 
   <div  class="card-div col-md-6 col-md-offset-3" style="padding-top: 30px;, padding-bottom: 30px">
-    <h1 style="width: 200px; padding-top:10px; padding-bottom: 30px;"> Welcome to StyleMe, 
+    <h1 style="width: 300px; padding-top:10px; padding-bottom: 30px;font-size:3.0rem;"> Welcome to StyleMe,
     <span style="font-size: 50%;">your digital Outfit Planner! 
     <%= button_to "Log in", login_path, :method => "get",class: "btn green-btn" %>
     <%= button_to "Sign Up", signup_path, :method => "get",class: "btn green-btn" %>
