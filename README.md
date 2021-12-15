@@ -93,6 +93,7 @@ Users -> Clothes (is One to Many)
     <li> base64 </li>
     <li> json </li>
     <li> Geocoder </li>
+    <li> dotenv-rails </li>
 </ul>
 
 <h2> Slides & Github pages </h2>
