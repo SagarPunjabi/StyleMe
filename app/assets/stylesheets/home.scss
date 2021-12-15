@@ -92,6 +92,7 @@ $gray-medium-light: #ffffff;
       border-style: ridge;
       margin-right: 3px;
       text-align: center;
+      
   }
 
   .unboxed-button:hover, .active
@@ -111,6 +112,7 @@ $gray-medium-light: #ffffff;
   /* unvisited link */
 a:link {
   color: rgb(255, 255, 255) !important;
+  text-decoration: none !important;
 }
 
 /* visited link */
