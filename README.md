@@ -22,7 +22,6 @@ Style Me! is an outfit planning application that recommends users new outfits ev
 <h2 style ="color:yellow"> Future features </h2>
 <ul>
     <li> Color matching algorithm for outfits </li>
-    <li> Color matching algorithm for outfits </li>
     <li> Mobile app </li>
     <li> Vacation wardrobe </li>
     <li> Multiselect upload </li>
