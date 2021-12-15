@@ -1,6 +1,6 @@
 ## Welcome to StyleMe!
 ### Project Summary
-Have you ever woke up in the morning and had no clue what to wear? Well with StyleMe!, that’s a worry of the past. Style Me! is an outfit planning application that recommends users new outfits everyday based on the weather. Users have the ability to sign up for the application. Once they are registered, users can upload pictures of their clothes. We use an image recognation API to make the uploading process easier. Once the user has uploaded their clothes, they can generate a randomized outfit. We use a weather API to generate appropriate outfits & accessories for the day. We also use a color matching algorithm to make sure the outfit is stylish! Once the user selects the outfit, the clothes get put into a dirty pile and won't get suggested until the user marks them as "clean". The average human being makes hundreds of decisions per day. Don’t let the decision-fatigue get in the way of starting your day and use StyleMe instead!
+Have you ever woke up in the morning and had no clue what to wear? Well with StyleMe!, that’s a worry of the past. Style Me! is an outfit planning application that recommends users new outfits everyday based on the weather. Users have the ability to sign up for the application. Once they are registered, users can upload pictures of their clothes. We use an image recognation API to make the uploading process easier. Once the user has uploaded their clothes, they can generate a randomized outfit. We use a weather API to generate appropriate outfits & accessories for the day.  Once the user selects the outfit, the clothes get put into a dirty pile and won't get suggested until the user marks them as "clean". The average human being makes hundreds of decisions per day. Don’t let the decision-fatigue get in the way of starting your day and use StyleMe instead!
 
 
 ### Features
@@ -36,7 +36,7 @@ One of the hardest challenges of creating this application was getting the Imagg
 
 ### Application Architecture
 
-![Software Architecture](https://user-images.githubusercontent.com/64447359/145686977-bdda82b2-f4dd-4555-ab92-2801b8914d74.jpeg)
+![Software Architecture (1)](https://user-images.githubusercontent.com/64447359/146118228-b33e8c14-6082-46fc-8bd5-700976509180.jpeg)
 
 ### Database Schema
 
