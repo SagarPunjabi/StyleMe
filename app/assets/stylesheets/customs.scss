@@ -244,7 +244,7 @@ label {
 .transparent-btn {
   background: transparent !important;
   border: transparent;
-  box-shadow: transparent !important; 
+  box-shadow: transparent !important;
   padding: 0 0 0 0 !important;
   background: transparent;
 }
@@ -253,7 +253,7 @@ label {
 }
 .transparent-btn:active {
   box-shadow: transparent;
-  border:transparent
+  border: transparent;
 }
 .transparent-btn:visited {
   box-shadow: transparent;
@@ -262,14 +262,14 @@ label {
 
 /* images */
 .static {
-  position:absolute;
+  position: absolute;
 }
 
 .static:hover {
-  opacity:0;
+  opacity: 0;
 }
 
-/* error handling */ 
+/* error handling */
 
 #error_explanation {
   background: transparent !important;
