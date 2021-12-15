@@ -97,6 +97,6 @@ Users -> Clothes (is One to Many)
 
 <h2> Slides & Github pages </h2>
 <ul>
-    <li><a href="https://drive.google.com/file/d/1slrYfbuqrX5UDBIFTNOH5DnvLb2msZRE/view?usp=sharing"> Pdf Copy of Slides </a> </li>
+    <li><a href="https://drive.google.com/file/d/1YqzSJls7i9YJupDuew-VkrVvGI_eOgGq/view?usp=sharing"> Pdf Copy of Slides </a> </li>
     <li><a href="https://sagarpunjabi.github.io/StyleMe/">Final Report</a> </li>
 </ul>
