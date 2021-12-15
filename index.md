@@ -40,7 +40,8 @@ One of the hardest challenges of creating this application was getting the Imagg
 
 ### Database Schema
 
-![databaseschema](https://user-images.githubusercontent.com/64447359/145687012-d935448d-df51-48d3-a181-c945a0f4f6af.png)
+![dbschema](https://user-images.githubusercontent.com/64447359/146117493-3e941589-8803-4b3c-80e3-4689d720c484.png)
+
 
 ### Future Features
 We would like to implement a vacation wardrobe feature in the future. This would allow the user to select a number of clothes they want to take with them on vacation, so they can have outfit suggestions wherever they are. Another feature we would like to implement is the option to generate an outfit based around a favorite clothing item. If a user wants to wear a specific shirt then the outfit will be generated around that shirt. We also want to implement the option to upload multiple images at once and make a mobile version of our app.
