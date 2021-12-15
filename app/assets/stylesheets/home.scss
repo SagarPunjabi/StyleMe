@@ -88,7 +88,20 @@ $gray-medium-light: #ffffff;
   }
 
   .unboxed-button {
-      padding: 2%;
+      padding: 1%;
+      border-style: ridge;
+      margin-right: 3px;
+      text-align: center;
+  }
+
+  .unboxed-button:hover, .active
+  {
+    background: $light-primary-blue;
+  }
+
+  .unboxed-button:active 
+  {
+    background: $dark-primary-blue;
   }
 
   .navbar {
@@ -119,4 +132,6 @@ a:hover {
 a:active {
   color: rgb(226, 255, 227) !important;
 }
+
+
 
