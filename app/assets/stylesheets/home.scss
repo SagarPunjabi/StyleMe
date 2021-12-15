@@ -92,16 +92,17 @@ $gray-medium-light: #ffffff;
       border-style: ridge;
       margin-right: 3px;
       text-align: center;
+      
   }
 
   .unboxed-button:hover, .active
   {
-    background: $light-primary-blue;
+    background: #0d4362;
   }
 
   .unboxed-button:active 
   {
-    background: $dark-primary-blue;
+    background: #0d4362;
   }
 
   .navbar {
@@ -111,6 +112,7 @@ $gray-medium-light: #ffffff;
   /* unvisited link */
 a:link {
   color: rgb(255, 255, 255) !important;
+  text-decoration: none !important;
 }
 
 /* visited link */
@@ -130,7 +132,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: rgb(226, 255, 227) !important;
+  color: rgb(109, 156, 110) !important;
 }
 
 
