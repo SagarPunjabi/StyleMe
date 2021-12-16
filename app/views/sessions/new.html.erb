@@ -9,6 +9,11 @@
 <!-- Log In --> 
 <div class="row justify-content-center" style="margin: 80px 20px 10px 30px;">  
   <div class="col-md-6 col-md-offset-3">
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-danger">
+        <%= msg %>
+      </div>
+    <% end %>
     <h1 class="text-with-line" style="padding-bottom: 10px;">Log in</h1>
     <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
       

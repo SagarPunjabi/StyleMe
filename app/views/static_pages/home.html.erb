@@ -16,36 +16,37 @@
 </script>
 
 <!-- home page --> 
-<div id="start" class="row justify-content-center" style="margin: 80px 20px 10px 0px;">  
+<div id="start" class="row justify-content-center section-container container" style="margin: 80px 20px 10px 0px;">  
   <div class="col-md-6 col-md-offset-3" style="padding-top: 50px; padding-bottom: 2px;">
-    <div class="center-it">
+    <div class="center-it card-sized-div">
         <button class="btn transparent-btn static" onclick="scrolldiv('begin-exploring')"> <i aria-hidden="true"></i> &nbsp; <%= image_tag("downarrowgif.gif", style: 'height:40%; width:40%; border-radius: 50%;', :alt => "Arrow pointing downwards") %></button>
         <button class="btn transparent-btn active" onclick="scrolldiv('begin-exploring')"> <i aria-hidden="true"></i> &nbsp; <%= image_tag("downarrowgif.gif", style: 'height:40%; width:40%; border-radius: 50%;', :alt => "Arrow pointing downwards") %></button>
     </div>
   </div>
 
   <div  class="card-div col-md-6 col-md-offset-3" style="padding-top: 30px;, padding-bottom: 30px">
-    <h1 style="width: 300px; padding-top:10px; padding-bottom: 30px;font-size:3.0rem;"> Welcome to StyleMe,
+    <h1 style="width: 300px; padding-top:10px; padding-bottom: 30px;font-size:3.0rem;"> Welcome to 
+    <span style = "font-size: 110%";>StyleMe! </span><br>
     <span style="font-size: 50%;">your digital Outfit Planner! 
     <%= button_to "Log in", login_path, :method => "get",class: "btn green-btn" %>
     <%= button_to "Sign Up", signup_path, :method => "get",class: "btn green-btn" %>
     </span></h1> 
   </div>
 </div>
-<div id = "begin-exploring" class="row justify-content-center" style="margin: 80px 20px 10px 30px;">  
+<div id = "begin-exploring" class="row justify-content-center section-container" style="margin: 80px 20px 10px 30px;">  
   <div class="card-div col-md-6 col-md-offset-3" align="center">
     <h1 style="width: 200px;"> Two simple steps ... </h1>
     <hr> 
     <button class="btn transparent-btn active" style="width: 100px;" onclick="scrolldiv('outfitready')"> <i aria-hidden="true"></i> &nbsp; <%= image_tag("downarrowgif.gif", style: 'height:40%; width:40%; border-radius: 50%;', :alt => "Arrow pointing downwards") %></button>
   </div>
 
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 card-sized-div">
     <%= image_tag("simplesteps.png", style: 'height:80%; width:80%;', :alt => "Simple Steps") %>
   </div>
 </div>
 
-<div id= "outfitready" class="row justify-content-center" style="margin: 80px 20px 10px 30px;">  
-  <div class=" col-md-6 col-md-offset-3" align="center">
+<div id= "outfitready" class="row justify-content-center section-container" style="margin: 80px 20px 40px 30px;">  
+  <div class=" col-md-6 col-md-offset-3 card-sized-div" align="center">
     <%= image_tag("outfit.png", style: 'height:80%; width:80%;', :alt => "outfit showing pictures of clothes and weather") %>
   </div>
 
